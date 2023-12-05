@@ -1,0 +1,26 @@
+.app {
+  display: grid;
+  grid-template: 2fr 6fr 1fr / 1fr 7fr 1fr;
+  min-height: 100vh;
+}
+
+.header,
+.main,
+.footer {
+  align-items: center;
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.main {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.footer {
+  grid-area: 3 / 2 / 4 / 3;
+}
