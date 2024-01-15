@@ -1,0 +1,44 @@
+:root {
+  --light-primary-rgb: 255, 255, 255;
+  --dark-primary-rgb: 13, 33, 44;
+  --light-secondary-rgb: 93, 192, 199;
+  --medium-secondary-rgb: 7, 155, 171;
+  --dark-secondary-rgb: 0, 93, 112;
+  --accent-rgb: 235, 183, 91;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+menu {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
