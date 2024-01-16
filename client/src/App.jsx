@@ -2,21 +2,41 @@
 // external
 import { Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 // components
 import TabletOrMobile from "./components/TabletOrMobile";
+import ThemeToggle from "./components/ThemeToggle";
 // assets
-import s from "./App.module.css";
+import darkTheme from "./dark.module.css";
+import lightTheme from "./light.module.css";
 
 /// Component ///
 function App() {
-  // hooks
+  // get browser theme //
+  const initialTheme = window.matchMedia("(prefers-color-scheme: light)")
+    .matches
+    ? "light"
+    : "dark";
+
+  // initialize states //
+  const [s, setS] = useState(initialTheme === "light" ? lightTheme : darkTheme);
+  const [theme, setTheme] = useState(initialTheme);
+
+  // initialize hook for responsive layout //
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1000, minHeight: 600 });
 
-  // markup
+  // change CSS module when theme is changed //
+  useEffect(() => {
+    setS(theme === "light" ? lightTheme : darkTheme);
+  }, [theme]);
+
+  // render
   if (isDesktopOrLaptop) {
     return (
       <div className={s.app}>
-        <header className={s.header}>Header</header>
+        <header className={s.header}>
+          <ThemeToggle setTheme={setTheme} theme={theme} />
+        </header>
         <main className={s.main}>
           <Outlet />
         </main>
@@ -24,7 +44,7 @@ function App() {
       </div>
     );
   }
-  return <TabletOrMobile />;
+  return <TabletOrMobile setTheme={setTheme} theme={theme} />;
 }
 
 export default App;

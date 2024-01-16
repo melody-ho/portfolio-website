@@ -1,6 +1,4 @@
-.notFound,
-.landscape,
-.portrait {
+.notFound {
   align-items: center;
   display: flex;
   justify-content: center;

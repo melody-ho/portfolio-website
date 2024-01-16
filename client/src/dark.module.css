@@ -1,4 +1,5 @@
 .app {
+  background-color: rgb(var(--dark-primary-rgb));
   display: grid;
   grid-template: 2fr 6fr 1fr / 1fr 7fr 1fr;
   min-height: 100vh;

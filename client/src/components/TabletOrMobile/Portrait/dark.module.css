@@ -1,0 +1,4 @@
+.body {
+  background-color: rgb(var(--dark-primary-rgb));
+  min-height: 100vh;
+}
