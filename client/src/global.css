@@ -7,6 +7,166 @@
   --accent-rgb: 235, 183, 91;
 }
 
+@font-face {
+  font-family: "acumin-thin";
+  src: url("/fonts/acumin-thin.woff2");
+}
+
+@font-face {
+  font-family: "acumin-extralight";
+  src: url("/fonts/acumin-extralight.woff2");
+}
+
+@font-face {
+  font-family: "acumin-light";
+  src: url("/fonts/acumin-light.woff2");
+}
+
+@font-face {
+  font-family: "acumin-regular";
+  src: url("/fonts/acumin-regular.woff2");
+}
+
+@font-face {
+  font-family: "acumin-medium";
+  src: url("/fonts/acumin-medium.woff2");
+}
+
+@font-face {
+  font-family: "acumin-semibold";
+  src: url("/fonts/acumin-semibold.woff2");
+}
+
+@font-face {
+  font-family: "acumin-bold";
+  src: url("/fonts/acumin-bold.woff2");
+}
+
+@font-face {
+  font-family: "acumin-black";
+  src: url("/fonts/acumin-black.woff2");
+}
+
+@font-face {
+  font-family: "acumin-ultrablack";
+  src: url("/fonts/acumin-ultrablack.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-thin";
+  src: url("/fonts/eaves-xl-mod-thin.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-light";
+  src: url("/fonts/eaves-xl-mod-light.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-book";
+  src: url("/fonts/eaves-xl-mod-book.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-regular";
+  src: url("/fonts/eaves-xl-mod-regular.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-bold";
+  src: url("/fonts/eaves-xl-mod-bold.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-heavy";
+  src: url("/fonts/eaves-xl-mod-heavy.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-mod-ultra";
+  src: url("/fonts/eaves-xl-mod-ultra.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-thin";
+  src: url("/fonts/eaves-xl-san-thin.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-light";
+  src: url("/fonts/eaves-xl-san-light.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-book";
+  src: url("/fonts/eaves-xl-san-book.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-regular";
+  src: url("/fonts/eaves-xl-san-regular.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-bold";
+  src: url("/fonts/eaves-xl-san-bold.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-heavy";
+  src: url("/fonts/eaves-xl-san-heavy.woff2");
+}
+
+@font-face {
+  font-family: "eaves-xl-san-ultra";
+  src: url("/fonts/eaves-xl-san-ultra.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-thin";
+  src: url("/fonts/monolisa-thin.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-extralight";
+  src: url("/fonts/monolisa-extralight.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-light";
+  src: url("/fonts/monolisa-light.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-regular";
+  src: url("/fonts/monolisa-regular.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-medium";
+  src: url("/fonts/monolisa-medium.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-semibold";
+  src: url("/fonts/monolisa-semibold.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-bold";
+  src: url("/fonts/monolisa-bold.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-extrabold";
+  src: url("/fonts/monolisa-extrabold.woff2");
+}
+
+@font-face {
+  font-family: "monolisa-black";
+  src: url("/fonts/monolisa-black.woff2");
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
