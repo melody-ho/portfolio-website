@@ -25,9 +25,10 @@ function App() {
   // initialize hook for responsive layout //
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1000, minHeight: 600 });
 
-  // change CSS module when theme is changed //
+  // change CSS module and body background color when theme is changed //
   useEffect(() => {
     setS(theme === "light" ? lightTheme : darkTheme);
+    document.body.style = `background-color: rgb(var(--${theme}-primary-rgb))`;
   }, [theme]);
 
   // render

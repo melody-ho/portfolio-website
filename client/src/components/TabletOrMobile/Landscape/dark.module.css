@@ -1,4 +1,64 @@
 .body {
   background-color: rgb(var(--dark-primary-rgb));
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.header {
+  background-color: rgb(var(--dark-primary-rgb));
+  border-right: solid 0.2em rgb(var(--light-primary-rgb));
+  display: flex;
+  flex-direction: column;
+  font-size: calc(16px + 0.5vw);
+  height: 100vh;
+  justify-content: space-between;
+  padding: max(25px, 2.5vw) max(10px, 1vw) max(25px, 2.5vw) max(50px, 5vw);
+  position: sticky;
+  top: 0;
+}
+
+.headerTop {
+  display: flex;
+  flex-direction: column;
+  gap: max(15px, 4vw);
+}
+
+.logoLink {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.textLink {
+  color: rgb(var(--light-primary-rgb));
+  font-family: eaves-xl-mod-ultra;
+  text-decoration: none;
+}
+
+.headerBottom {
+  align-self: flex-end;
+  height: 4em;
+  width: 4em;
+}
+
+.home,
+.showcase,
+.me {
+  min-height: 85vh;
+}
+
+.home {
+  background-color: rgb(var(--dark-primary-rgb));
+}
+
+.showcase {
+  background-color: rgb(var(--dark-secondary-rgb));
+}
+
+.me {
+  background-color: rgb(var(--dark-primary-rgb));
+}
+
+.footer {
+  background-color: rgb(var(--dark-primary-rgb));
+  min-height: 15vh;
 }
