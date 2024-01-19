@@ -2,6 +2,8 @@
 // external
 import { useEffect, useState } from "react";
 // components
+import Avatar from "../../Avatar";
+import DeskIllustration from "../../DeskIllustration";
 import ThemeToggle from "../../ThemeToggle";
 import { DarkBlinkingLogo, LightBlinkingLogo } from "../../BlinkingLogo";
 // assets
@@ -48,7 +50,25 @@ function Portrait({ setTheme, theme }) {
         </div>
       </header>
       <main>
-        <section className={`${s.home} ${s.targetOffset}`} id="home"></section>
+        <section className={`${s.home} ${s.targetOffset}`} id="home">
+          <div className={s.taglineWrapper}>
+            <p className={s.taglineBase}>
+              <span className={s.taglineTertiary}>Hello</span>
+              , my name is
+              <br />
+              <span className={s.taglinePrimary}>Melody Ho</span>
+              .<br />
+              I&apos;m a{" "}
+              <span className={s.taglineSecondary}>software engineer</span>.
+            </p>
+          </div>
+          <div className={s.deskIllustration}>
+            <DeskIllustration theme={theme} />
+          </div>
+          <div className={s.avatar}>
+            <Avatar />
+          </div>
+        </section>
         <section
           className={`${s.showcase} ${s.targetOffset}`}
           id="showcase"

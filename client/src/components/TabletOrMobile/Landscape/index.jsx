@@ -2,6 +2,8 @@
 // external
 import { useEffect, useState } from "react";
 // components
+import Avatar from "../../Avatar";
+import DeskIllustration from "../../DeskIllustration";
 import ThemeToggle from "../../ThemeToggle";
 import { DarkBlinkingLogo, LightBlinkingLogo } from "../../BlinkingLogo";
 // assets
@@ -47,7 +49,25 @@ function Landscape({ setTheme, theme }) {
       </header>
       <div>
         <main>
-          <section className={s.home} id="home"></section>
+          <section className={s.home} id="home">
+            <div className={s.taglineWrapper}>
+              <p className={s.taglineBase}>
+                <span className={s.taglineTertiary}>Hello</span>
+                , my name is
+                <br />
+                <span className={s.taglinePrimary}>Melody Ho</span>
+                .<br />
+                I&apos;m a{" "}
+                <span className={s.taglineSecondary}>software engineer</span>.
+              </p>
+            </div>
+            <div className={s.deskIllustration}>
+              <DeskIllustration theme={theme} />
+            </div>
+            <div className={s.avatar}>
+              <Avatar />
+            </div>
+          </section>
           <section className={s.showcase} id="showcase"></section>
           <section className={s.me} id="me"></section>
         </main>
