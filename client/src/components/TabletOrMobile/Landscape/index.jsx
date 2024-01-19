@@ -10,12 +10,76 @@ import { DarkBlinkingLogo, LightBlinkingLogo } from "../../BlinkingLogo";
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
 
+/// Constants ///
+const INFINITE_CONTENT = {
+  title: "Infinite: A Game",
+  imgAlt: "screenshot of Infinite",
+  imgSrc: "/infinite-square-screenshot.webp",
+  description:
+    "Infinite is a game where you can endlessly expand the galaxy by matching edges of hexagonal tiles.",
+  skills: ["JavaScript", "HTML", "CSS", "Express"],
+  githubUrl: "//github.com/melody-ho/infinite",
+  demoUrl: "//infinite.melodyho.dev",
+};
+
+const JOURN_CONTENT = {
+  title: "Journ: A Scrapbook",
+  imgAlt: "screenshot of Journ",
+  description:
+    "Journ is a digital scrapbook where you can document moments using images, videos, and text.",
+  skills: ["React", "Next.js", "Sequelize", "SQL", "AWS S3"],
+  githubUrl: "//github.com/melody-ho/journ",
+  demoUrl: "//journ.melodyho.dev",
+};
+
+const JOURN_CONTENT_LIGHT = {
+  ...JOURN_CONTENT,
+  imgSrc: "/journ-square-light-screenshot.webp",
+};
+
+const JOURN_CONTENT_DARK = {
+  ...JOURN_CONTENT,
+  imgSrc: "/journ-square-dark-screenshot.webp",
+};
+
 /// Private Components ///
 function Logo({ theme }) {
   if (window.matchMedia("(hover: hover)").matches) {
     return theme === "light" ? <LightBlinkingLogo /> : <DarkBlinkingLogo />;
   }
   return <img alt="website logo" src={`/static-logo/${theme}.svg`} />;
+}
+
+function ShowcaseCard({ content, s }) {
+  return (
+    <div className={s.showcaseContainer}>
+      <img
+        alt={content.imgAlt}
+        className={s.showcaseImg}
+        src={content.imgSrc}
+      />
+      <div className={s.showcaseRightSection}>
+        <p className={s.showcaseLabel}>showcase</p>
+        <h1 className={s.showcaseTitle}>{content.title}</h1>
+        <p className={s.showcaseDescription}>{content.description}</p>
+        <div className={s.showcaseSkills}>
+          {content.skills.map((skill) => (
+            <div className={s.showcaseSkillContainer} key={skill}>
+              <p>{skill}</p>
+            </div>
+          ))}
+        </div>
+        <div className={s.showcaseLinks}>
+          <a className={s.showcaseLink} href={content.githubUrl}>
+            See on GitHub
+          </a>
+          <a className={s.showcaseLink} href={content.demoUrl}>
+            See Live
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /// Public Components ///
@@ -68,7 +132,15 @@ function Landscape({ setTheme, theme }) {
               <Avatar />
             </div>
           </section>
-          <section className={s.showcase} id="showcase"></section>
+          <section className={s.showcase} id="showcase">
+            <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+            <ShowcaseCard
+              content={
+                theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
+              }
+              s={s}
+            />
+          </section>
           <section className={s.me} id="me"></section>
         </main>
         <footer className={s.footer}></footer>

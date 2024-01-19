@@ -1,7 +1,7 @@
 .body {
   background-color: rgb(var(--light-primary-rgb));
   display: grid;
-  grid-template-columns: 1fr clamp(320px, 80vw, 80vw);
+  grid-template-columns: 1fr clamp(650px, 80vw, 80vw);
 }
 
 .header {
@@ -102,6 +102,80 @@
 
 .showcase {
   background-color: rgb(var(--medium-secondary-rgb));
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px + 1vh);
+  padding: calc(25px + 2vh) calc(20px + 2vw);
+}
+
+.showcaseContainer {
+  align-items: center;
+  background-color: rgb(var(--dark-secondary-rgb));
+  border-radius: 0.5em;
+  color: rgb(var(--light-primary-rgb));
+  column-gap: 1em;
+  display: grid;
+  font-size: calc(12px + 0.5vw);
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5em 2em 1.5em 0;
+}
+
+.showcaseImg {
+  width: 100%;
+}
+
+.showcaseRightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.showcaseLabel {
+  font-family: monolisa-light;
+  font-size: calc(10px + 0.5vw);
+}
+
+.showcaseTitle {
+  font-family: eaves-xl-mod-ultra;
+  font-size: calc(26px + 0.5vw);
+}
+
+.showcaseDescription {
+  font-family: acumin-light;
+}
+
+.showcaseSkills {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: calc(8px + 0.25vw);
+  gap: 0.6em;
+}
+
+.showcaseSkillContainer {
+  background-color: rgba(var(--light-primary-rgb), 0.9);
+  border-radius: 0.2em;
+  color: rgb(var(--dark-primary-rgb));
+  font-family: monolisa-light;
+  letter-spacing: -0.025em;
+  padding: 0.2em 0.5em;
+}
+
+.showcaseLinks {
+  display: flex;
+  font-size: calc(14px + 0.25vw);
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.showcaseLink {
+  border: 0.25em solid rgb(var(--accent-rgb));
+  border-radius: 0.35em;
+  color: rgb(var(--accent-rgb));
+  flex: 1;
+  font-family: eaves-xl-san-heavy;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
 }
 
 .me {
