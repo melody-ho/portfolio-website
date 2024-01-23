@@ -180,6 +180,166 @@
 
 .me {
   background-color: rgb(var(--dark-primary-rgb));
+  color: rgb(var(--light-primary-rgb));
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 0.75vw);
+  gap: 1em;
+  padding: calc(40px + 2.5vh) calc(20px + 2vw);
+}
+
+.meTopSections {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meHeader {
+  align-items: end;
+  display: flex;
+  font-size: calc(22px + 1vw);
+  gap: 0.5em;
+}
+
+.meProfilePhoto {
+  width: 3.5em;
+}
+
+.meHeading {
+  font-family: eaves-xl-mod-ultra;
+}
+
+.meResumeBtnContainer {
+  margin-right: 5%;
+}
+
+.meResumeBtn {
+  background-color: rgb(247, 173, 25);
+  border: rgb(var(--light-primary-rgb)) solid 0.2em;
+  border-radius: 1.125em;
+  color: rgb(var(--light-primary-rgb));
+  display: block;
+  font-family: eaves-xl-san-heavy;
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.meTagline {
+  font-family: acumin-semibold;
+}
+
+.meLinks {
+  display: flex;
+  gap: max(10px, min(20px, 0.5vw));
+  height: max(50px, min(80px, 5vw));
+  width: max(100px, min(160px, 10vw));
+}
+
+.meLink {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.meHorizontalRule {
+  border-bottom: rgb(var(--light-primary-rgb)) solid 0.02em;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.meSubsections {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.meSubheading {
+  font-family: eaves-xl-mod-bold;
+  font-size: 1.5em;
+  margin: 2em 0 1.5em 0;
+}
+
+.meTechSkills {
+  display: flex;
+  flex-direction: column;
+  font-family: monolisa-regular;
+  font-size: calc(12px + 0.5vw);
+  gap: 1.5em;
+  letter-spacing: -0.05em;
+  padding: 0 2.5em 0 1.25em;
+}
+
+.meTechSkill {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meTechSkillsBar {
+  border: rgb(var(--dark-secondary-rgb)) solid 0.1em;
+  border-radius: 0.5em;
+  display: grid;
+  gap: 0.1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 1.5em;
+  overflow: clip;
+  width: 50vw;
+}
+
+.meTechSkillsBarSolid {
+  background-color: rgb(var(--dark-secondary-rgb));
+}
+
+.meCertificates {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(12px + 1vw);
+  gap: 1.5em;
+  padding-left: 1.25em;
+}
+
+.meCertificate {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+.meCertificateImg {
+  width: 3em;
+}
+
+.meCertificateTitle {
+  font-family: acumin-semibold;
+}
+
+.meCertificateLink {
+  color: rgb(var(--light-primary-rgb));
+  font-family: acumin-light;
+  font-size: calc(10px + 1vw);
+}
+
+.meHobbies {
+  column-gap: 2%;
+  display: grid;
+  font-size: calc(8px + 0.75vw);
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-right: 2em;
+  row-gap: 2.5em;
+}
+
+.meHobby {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.meHobbyImg {
+  width: 4em;
+}
+
+.meHobbyText {
+  font-family: acumin-regular;
 }
 
 .footer {
