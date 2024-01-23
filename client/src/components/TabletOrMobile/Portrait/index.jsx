@@ -274,7 +274,15 @@ function Portrait({ setTheme, theme }) {
           </div>
         </section>
       </main>
-      <footer className={s.footer}></footer>
+      <footer className={s.footer}>
+        <p>© 2024 Melody Ho. All rights reserved.</p>
+        <a
+          className={s.footerLink}
+          href="//github.com/melody-ho/portfolio-website"
+        >
+          See on GitHub
+        </a>
+      </footer>
     </div>
   );
 }

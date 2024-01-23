@@ -343,6 +343,25 @@
 }
 
 .footer {
+  align-items: center;
   background-color: rgb(var(--light-primary-rgb));
-  min-height: 15vh;
+  border-top: rgb(var(--medium-secondary-rgb)) solid 0.05em;
+  color: rgb(var(--medium-secondary-rgb));
+  display: flex;
+  flex-direction: column;
+  font-family: acumin-extralight;
+  font-size: calc(12px + 0.5vw);
+  justify-content: center;
+  min-height: 20vh;
+}
+
+.footerLink {
+  border: rgb(var(--medium-secondary-rgb)) solid 0.075em;
+  border-radius: 0.5em;
+  color: rgb(var(--medium-secondary-rgb));
+  font-family: monolisa-extralight;
+  font-size: 0.65em;
+  margin-top: 0.5em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
 }
