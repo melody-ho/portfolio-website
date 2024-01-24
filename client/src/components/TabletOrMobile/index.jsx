@@ -1,6 +1,5 @@
 /// Imports ///
 // external
-import { useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 // components
 import Landscape from "./Landscape";
@@ -8,22 +7,27 @@ import Portrait from "./Portrait";
 // assets
 import s from "./index.module.css";
 
+/// Constants ///
+const validSubpaths = ["", "showcase", "me"];
+
 /// Component ///
 function TabletOrMobile({ setTheme, theme }) {
-  // initialize hooks //
-  const location = useLocation();
+  // initialize hook for responsive layout //
   const isLandscape = useMediaQuery({ minAspectRatio: "16/9" });
 
+  // get subpath //
+  const subpath = window.location.pathname.split("/")[1];
+
   // render - invalid paths //
-  if (location.pathname !== "/") {
+  if (!validSubpaths.includes(subpath)) {
     return <div className={s.notFound}>Not Found</div>;
   }
 
   // render - main //
   if (isLandscape) {
-    return <Landscape setTheme={setTheme} theme={theme} />;
+    return <Landscape fragmentId={subpath} setTheme={setTheme} theme={theme} />;
   }
-  return <Portrait setTheme={setTheme} theme={theme} />;
+  return <Portrait fragmentId={subpath} setTheme={setTheme} theme={theme} />;
 }
 
 export default TabletOrMobile;

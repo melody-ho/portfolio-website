@@ -1,8 +1,8 @@
 /// Imports ///
 // external
-import { Outlet } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 // components
 import TabletOrMobile from "./components/TabletOrMobile";
 import ThemeToggle from "./components/ThemeToggle";
@@ -25,11 +25,28 @@ function App() {
   // initialize hook for responsive layout //
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1000, minHeight: 600 });
 
+  // initialize function for programmatic navigation //
+  const navigate = useNavigate();
+
   // change CSS module and body background color when theme is changed //
   useEffect(() => {
     setS(theme === "light" ? lightTheme : darkTheme);
     document.body.style = `background-color: rgb(var(--${theme}-primary-rgb))`;
   }, [theme]);
+
+  // redirect when switching between mobile/tablet and laptop/desktop viewport dimensions //
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      const fragment = window.location.hash.substring(1);
+      if (fragment !== "" && fragment !== "home") {
+        navigate(`/${fragment}`);
+      } else if (fragment === "home") {
+        navigate("/");
+      } else {
+        navigate(window.location);
+      }
+    }
+  }, [isDesktopOrLaptop, navigate]);
 
   // render
   if (isDesktopOrLaptop) {

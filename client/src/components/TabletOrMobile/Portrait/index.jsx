@@ -1,6 +1,6 @@
 /// Imports ///
 // external
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // components
 import Avatar from "../../Avatar";
 import DeskIllustration from "../../DeskIllustration";
@@ -130,29 +130,61 @@ function TechSkillsBar({ level, s }) {
 }
 
 /// Public Components ///
-function Portrait({ setTheme, theme }) {
-  // initialize states //
+function Portrait({ fragmentId, setTheme, theme }) {
+  // initialize states and refs //
   const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const homeLink = useRef(null);
+  const showcaseLink = useRef(null);
+  const meLink = useRef(null);
 
   // change CSS module when theme is changed //
   useEffect(() => {
     setS(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
+  // go to target indicated by fragment ID //
+  useEffect(() => {
+    // get existing hash
+    const existingHash = window.location.hash.substring(1);
+    if (existingHash === "") {
+      // handle transition from laptop/desktop dimensions
+      if (fragmentId === "") {
+        homeLink.current.click();
+      }
+      if (fragmentId === "showcase") {
+        showcaseLink.current.click();
+      }
+      if (fragmentId === "me") {
+        meLink.current.click();
+      }
+    } else {
+      // handle transition from landscape mobile/tablet dimensions
+      if (existingHash === "home") {
+        homeLink.current.click();
+      }
+      if (existingHash === "showcase") {
+        showcaseLink.current.click();
+      }
+      if (existingHash === "me") {
+        meLink.current.click();
+      }
+    }
+  }, [fragmentId]);
+
   // render //
   return (
     <div className={s.body}>
       <header className={s.header}>
         <div className={s.headerLeft}>
-          <a aria-label="return to top" href="/#home">
+          <a aria-label="return to top" href="/#home" ref={homeLink}>
             <Logo theme={theme} />
           </a>
         </div>
         <div className={s.headerRight}>
-          <a className={s.link} href="/#showcase">
+          <a className={s.link} href="/#showcase" ref={showcaseLink}>
             showcase
           </a>
-          <a className={s.link} href="/#me">
+          <a className={s.link} href="/#me" ref={meLink}>
             me
           </a>
           <div className={s.themeToggle}>
