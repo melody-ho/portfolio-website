@@ -17,50 +17,54 @@ function Avatar() {
 
   // configure animation interactivity after first wave has played //
   useEffect(() => {
-    avatarRef.current.addEventListener("play", () => {
-      if (!avatarInteraction.current) {
-        setTimeout(() => {
-          if (window.matchMedia("(hover: hover)").matches) {
-            create({
-              player: "#avatar",
-              mode: "cursor",
-              actions: [
-                {
-                  position: { x: [0, 1], y: [0, 1] },
-                  type: "loop",
-                  frames: WAVE_LOOP_FRAMES,
-                },
-                {
-                  position: { x: -1, y: -1 },
-                  type: "loop",
-                  frames: BLINKING_LOOP_FRAMES,
-                },
-              ],
-            });
-          } else {
-            create({
-              player: "#avatar",
-              mode: "chain",
-              actions: [
-                {
-                  state: "loop",
-                  frames: BLINKING_LOOP_FRAMES,
-                  transition: "click",
-                },
-                {
-                  state: "autoplay",
-                  frames: WAVE_FRAMES,
-                  transition: "onComplete",
-                  reset: true,
-                },
-              ],
-            });
-          }
-        }, INITIAL_INTERACTION_DELAY);
-        avatarInteraction.current = true;
-      }
-    });
-  }, []);
+    if (avatarRef.current) {
+      avatarRef.current.addEventListener("play", () => {
+        if (!avatarInteraction.current) {
+          setTimeout(() => {
+            if (avatarRef.current) {
+              if (window.matchMedia("(hover: hover)").matches) {
+                create({
+                  player: "#avatar",
+                  mode: "cursor",
+                  actions: [
+                    {
+                      position: { x: [0, 1], y: [0, 1] },
+                      type: "loop",
+                      frames: WAVE_LOOP_FRAMES,
+                    },
+                    {
+                      position: { x: -1, y: -1 },
+                      type: "loop",
+                      frames: BLINKING_LOOP_FRAMES,
+                    },
+                  ],
+                });
+              } else {
+                create({
+                  player: "#avatar",
+                  mode: "chain",
+                  actions: [
+                    {
+                      state: "loop",
+                      frames: BLINKING_LOOP_FRAMES,
+                      transition: "click",
+                    },
+                    {
+                      state: "autoplay",
+                      frames: WAVE_FRAMES,
+                      transition: "onComplete",
+                      reset: true,
+                    },
+                  ],
+                });
+              }
+            }
+          }, INITIAL_INTERACTION_DELAY);
+          avatarInteraction.current = true;
+        }
+      });
+    }
+  }, [avatarRef]);
 
   // render //
   return (
