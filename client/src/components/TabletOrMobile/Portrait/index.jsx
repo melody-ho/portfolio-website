@@ -94,7 +94,7 @@ function Logo({ theme }) {
 
 function ShowcaseCard({ content, s }) {
   return (
-    <div className={s.showcaseContainer}>
+    <li className={s.showcaseContainer}>
       <p className={s.showcaseLabel}>showcase</p>
       <h1 className={s.showcaseTitle}>{content.title}</h1>
       <img alt={content.imgAlt} src={content.imgSrc} />
@@ -114,7 +114,7 @@ function ShowcaseCard({ content, s }) {
           See Live
         </a>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -181,13 +181,15 @@ function Portrait({ setTheme, theme }) {
           </div>
         </section>
         <section className={`${s.showcase} ${s.targetOffset}`} id="showcase">
-          <ShowcaseCard content={INFINITE_CONTENT} s={s} />
-          <ShowcaseCard
-            content={
-              theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
-            }
-            s={s}
-          />
+          <ul className={s.showcaseCards}>
+            <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+            <ShowcaseCard
+              content={
+                theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
+              }
+              s={s}
+            />
+          </ul>
         </section>
         <section className={`${s.me} ${s.targetOffset}`} id="me">
           <header className={s.meHeader}>

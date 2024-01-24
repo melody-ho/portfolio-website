@@ -94,7 +94,7 @@ function Logo({ theme }) {
 
 function ShowcaseCard({ content, s }) {
   return (
-    <div className={s.showcaseContainer}>
+    <li className={s.showcaseContainer}>
       <img
         alt={content.imgAlt}
         className={s.showcaseImg}
@@ -120,7 +120,7 @@ function ShowcaseCard({ content, s }) {
           </a>
         </div>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -186,13 +186,15 @@ function Landscape({ setTheme, theme }) {
             </div>
           </section>
           <section className={s.showcase} id="showcase">
-            <ShowcaseCard content={INFINITE_CONTENT} s={s} />
-            <ShowcaseCard
-              content={
-                theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
-              }
-              s={s}
-            />
+            <ul className={s.showcaseCards}>
+              <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+              <ShowcaseCard
+                content={
+                  theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
+                }
+                s={s}
+              />
+            </ul>
           </section>
           <section className={s.me} id="me">
             <div className={s.meTopSections}>

@@ -102,10 +102,13 @@
 
 .showcase {
   background-color: rgb(var(--medium-secondary-rgb));
+  padding: calc(60px + 5vh) calc(20px + 2vw);
+}
+
+.showcaseCards {
   display: flex;
   flex-direction: column;
-  gap: calc(20px + 1vh);
-  padding: calc(25px + 2vh) calc(20px + 2vw);
+  gap: calc(25px + 5vh);
 }
 
 .showcaseContainer {
@@ -185,7 +188,7 @@
   flex-direction: column;
   font-size: calc(10px + 0.75vw);
   gap: 1em;
-  padding: calc(40px + 2.5vh) calc(20px + 2vw);
+  padding: calc(60px + 5vh) calc(20px + 2vw);
 }
 
 .meTopSections {
