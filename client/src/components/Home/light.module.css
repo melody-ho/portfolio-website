@@ -1,0 +1,42 @@
+.lowerLayer {
+  bottom: 2vh;
+  height: 60vh;
+  position: absolute;
+  right: -20vh;
+}
+
+.deskIllustration {
+  aspect-ratio: 1.5;
+  height: 100%;
+}
+
+.topLayer {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.tagline {
+  color: rgb(var(--dark-primary-rgb));
+  filter: drop-shadow(2px 2px 2px rgba(var(--dark-primary-rgb), 0.5));
+  font-family: eaves-xl-mod-regular;
+  font-size: calc(16px + 2vw);
+  padding: 0.1em 0 2em 0;
+}
+
+.taglinePrimary {
+  color: rgb(var(--accent-rgb));
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(60px + 5vw);
+}
+
+.taglineSecondary {
+  color: rgb(var(--light-primary-rgb));
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(12px + 4vw);
+}
+
+.taglineTertiary {
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(12px + 3vw);
+}

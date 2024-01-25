@@ -4,7 +4,10 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { NavLink, useLocation, useNavigate, useOutlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+// contexts
+import ThemeContext from "./ThemeContext";
 // components
+import Avatar from "./components/Avatar";
 import TabletOrMobile from "./components/TabletOrMobile";
 import ThemeToggle from "./components/ThemeToggle";
 // variables
@@ -125,10 +128,15 @@ function App() {
               timeout={PAGE_TRANSITION_DURATION}
             >
               <div className={s.page} ref={nodeRef}>
-                {outlet}
+                <ThemeContext.Provider value={theme}>
+                  {outlet}
+                </ThemeContext.Provider>
               </div>
             </CSSTransition>
           </TransitionGroup>
+          <div className={s.avatar}>
+            <Avatar />
+          </div>
         </main>
         <footer className={s.footer}>
           <div className={s.footerLeft}>

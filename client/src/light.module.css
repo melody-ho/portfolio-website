@@ -86,7 +86,9 @@
 }
 
 .page {
+  height: 100%;
   position: absolute;
+  width: 100%;
 }
 
 .pageEnter {
@@ -105,6 +107,15 @@
 .pageExitActive {
   transform: translateX(-90vw);
   transition: transform 1500ms;
+}
+
+.avatar {
+  bottom: 2vh;
+  height: 25vh;
+  position: absolute;
+  right: 0;
+  width: 25vh;
+  z-index: 1;
 }
 
 .footer {
