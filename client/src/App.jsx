@@ -82,35 +82,41 @@ function App() {
           <div className={s.backgroundRight} />
         </div>
         <header className={s.header}>
-          <NavLink className={s.headerLogoLink} to="/">
-            <div className={s.headerLogo}>
-              <Logo theme={theme} />
-            </div>
-            <span className={s.headerLogotype}>melody ho</span>
-          </NavLink>
-          <div className={s.headerRight}>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
-                  : s.headerLink
-              }
-              to="/showcase"
-            >
-              showcase
+          <div className={s.headerBackground}>
+            <div className={s.headerBackgroundLeft} />
+            <div className={s.headerBackgroundRight} />
+          </div>
+          <div className={s.headerContent}>
+            <NavLink className={s.headerLogoLink} to="/">
+              <div className={s.headerLogo}>
+                <Logo theme={theme} />
+              </div>
+              <span className={s.headerLogotype}>melody ho</span>
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
-                  : s.headerLink
-              }
-              to="/me"
-            >
-              me
-            </NavLink>
-            <div className={s.headerThemeToggle}>
-              <ThemeToggle setTheme={setTheme} theme={theme} />
+            <div className={s.headerRight}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
+                    : s.headerLink
+                }
+                to="/showcase"
+              >
+                showcase
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
+                    : s.headerLink
+                }
+                to="/me"
+              >
+                me
+              </NavLink>
+              <div className={s.headerThemeToggle}>
+                <ThemeToggle setTheme={setTheme} theme={theme} />
+              </div>
             </div>
           </div>
         </header>
@@ -125,6 +131,9 @@ function App() {
               }}
               key={location.pathname}
               nodeRef={nodeRef}
+              onEnter={() => {
+                window.scrollTo(0, 0);
+              }}
               timeout={PAGE_TRANSITION_DURATION}
             >
               <div className={s.page} ref={nodeRef}>
@@ -139,25 +148,34 @@ function App() {
           </div>
         </main>
         <footer className={s.footer}>
-          <div className={s.footerLeft}>
-            <p>© 2024 Melody Ho. All rights reserved.</p>
-            <a
-              className={s.footerTextLink}
-              href="//github.com/melody-ho/portfolio-website"
-            >
-              See on GitHub
-            </a>
+          <div className={s.footerBackground}>
+            <div className={s.footerBackgroundLeft} />
+            <div className={s.footerBackgroundRight} />
           </div>
-          <div className={s.footerRight}>
-            <a className={s.footerIconLink} href="//github.com/melody-ho">
-              <img alt="GitHub" src={`/github-icon/${theme}-laptop.svg`} />
-            </a>
-            <a
-              className={s.footerIconLink}
-              href="//linkedin.com/in/melodyho-profile"
-            >
-              <img alt="LinkedIn" src={`/linkedin-icon/${theme}-laptop.svg`} />
-            </a>
+          <div className={s.footerContent}>
+            <div className={s.footerLeft}>
+              <p>© 2024 Melody Ho. All rights reserved.</p>
+              <a
+                className={s.footerTextLink}
+                href="//github.com/melody-ho/portfolio-website"
+              >
+                See on GitHub
+              </a>
+            </div>
+            <div className={s.footerRight}>
+              <a className={s.footerIconLink} href="//github.com/melody-ho">
+                <img alt="GitHub" src={`/github-icon/${theme}-laptop.svg`} />
+              </a>
+              <a
+                className={s.footerIconLink}
+                href="//linkedin.com/in/melodyho-profile"
+              >
+                <img
+                  alt="LinkedIn"
+                  src={`/linkedin-icon/${theme}-laptop.svg`}
+                />
+              </a>
+            </div>
           </div>
         </footer>
       </div>

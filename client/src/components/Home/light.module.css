@@ -1,3 +1,9 @@
+.component {
+  height: 100%;
+  margin: 0 11%;
+  position: relative;
+}
+
 .lowerLayer {
   bottom: 2vh;
   height: 60vh;

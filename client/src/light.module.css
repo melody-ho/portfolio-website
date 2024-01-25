@@ -1,29 +1,67 @@
 .app {
+  --footer-height: 10vh;
+  --header-height: 25vh;
   display: grid;
-  grid-template: 25vh 65vh 10vh / 1fr 7fr 1fr;
+  grid-template-rows: var(--header-height) 65vh var(--footer-height);
 }
 
-.background {
+.background,
+.header,
+.footer,
+.avatar {
+  position: fixed;
+}
+
+.background,
+.headerBackground,
+.footerBackground {
   display: grid;
   grid-template-columns: 2fr 1fr;
   height: 100%;
-  position: absolute;
   width: 100%;
-  z-index: -1;
 }
 
-.backgroundLeft {
+.backgroundLeft,
+.headerBackgroundLeft,
+.footerBackgroundLeft {
   background-color: rgb(var(--medium-secondary-rgb));
 }
 
-.backgroundRight {
+.backgroundRight,
+.headerBackgroundRight,
+.footerBackgroundRight {
   background-color: rgb(var(--light-primary-rgb));
 }
 
+.header,
+.footer {
+  width: 100%;
+  z-index: 1;
+}
+
 .header {
+  height: var(--header-height);
+}
+
+.headerBackground,
+.footerBackground {
+  position: absolute;
+}
+
+.headerContent,
+.footerContent {
+  height: 100%;
+  margin: 0 11%;
+}
+
+.headerContent,
+.footerContent {
+  position: relative;
+}
+
+.headerContent {
   align-items: center;
   display: flex;
-  grid-area: 1 / 2 / 2 / 3;
   justify-content: space-between;
   padding-top: 12vh;
 }
@@ -80,8 +118,8 @@
 }
 
 .main {
-  grid-area: 2 / 2 / 3 / 3;
-  overflow: clip;
+  grid-row: 2 / 3;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -110,21 +148,23 @@
 }
 
 .avatar {
-  bottom: 2vh;
+  bottom: calc(var(--footer-height) + 2vh);
   height: 25vh;
-  position: absolute;
-  right: 0;
+  right: calc(100% / 9);
   width: 25vh;
-  z-index: 1;
 }
 
 .footer {
+  bottom: 0;
+  height: var(--footer-height);
+}
+
+.footerContent {
   align-items: center;
   display: flex;
   font-size: calc(10px + 0.5vw);
-  grid-area: 3 / 2 / 4 / 3;
   justify-content: space-between;
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
 }
 
 .footerLeft {

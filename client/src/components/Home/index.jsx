@@ -24,7 +24,7 @@ function Home() {
 
   // render //
   return (
-    <>
+    <div className={s.component}>
       <div className={s.lowerLayer}>
         <div className={s.deskIllustration}>
           <DeskIllustration theme={theme} />
@@ -41,7 +41,7 @@ function Home() {
           <span className={s.taglineSecondary}>software engineer</span>.
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
