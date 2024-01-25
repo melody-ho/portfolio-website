@@ -1,21 +1,26 @@
+/// Imports ///
+// external
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+// components
 import App from "./App";
-import Home from "./components/Home";
-import Me from "./components/Me";
-import NotFound from "./components/NotFound";
-import Showcase from "./components/Showcase";
+// variables
+import routes from "./routes";
 
+/// Router ///
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "/showcase", element: <Showcase /> },
-      { path: "/me", element: <Me /> },
-      { path: "*", element: <NotFound /> },
-    ],
+    children: routes.map((route) => {
+      const childRoute = {};
+      if (route.path === "/") {
+        childRoute.index = true;
+      } else {
+        childRoute.path = route.path;
+      }
+      childRoute.element = route.element;
+      return childRoute;
+    }),
   },
 ]);
 

@@ -123,6 +123,11 @@
 }
 
 @font-face {
+  font-family: "logotype";
+  src: url("/fonts/logotype.woff2");
+}
+
+@font-face {
   font-family: "monolisa-thin";
   src: url("/fonts/monolisa-thin.woff2");
 }

@@ -1,0 +1,17 @@
+.slideIn::before {
+  animation: slideIn 750ms;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-0.75em);
+  }
+
+  75% {
+    transform: translateX(0.05em);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

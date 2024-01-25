@@ -8,7 +8,7 @@ const ANIMATION_FRAMES = [12, 210];
 const STOP_FRAME = [0];
 
 /// Private Components ///
-function BlinkingLogo({ theme }) {
+function BlinkingLogo({ device, theme }) {
   // initialize refs //
   const blinkingLogoInteraction = useRef(false);
   const blinkingLogoRef = useRef(null);
@@ -45,18 +45,31 @@ function BlinkingLogo({ theme }) {
     <lottie-player
       id={`${theme}BlinkingLogo`}
       ref={blinkingLogoRef}
-      src={`/blinking-logo/${theme}.json`}
+      src={`/blinking-logo/${theme}-${device}.json`}
     />
   );
 }
 
 /// Public Components ///
 function DarkBlinkingLogo() {
-  return <BlinkingLogo theme="dark" />;
+  return <BlinkingLogo device="laptop" theme="dark" />;
+}
+
+function DarkMobileBlinkingLogo() {
+  return <BlinkingLogo device="mobile" theme="dark" />;
 }
 
 function LightBlinkingLogo() {
-  return <BlinkingLogo theme="light" />;
+  return <BlinkingLogo device="laptop" theme="light" />;
 }
 
-export { DarkBlinkingLogo, LightBlinkingLogo };
+function LightMobileBlinkingLogo() {
+  return <BlinkingLogo device="mobile" theme="light" />;
+}
+
+export {
+  DarkBlinkingLogo,
+  DarkMobileBlinkingLogo,
+  LightBlinkingLogo,
+  LightMobileBlinkingLogo,
+};

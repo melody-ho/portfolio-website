@@ -5,7 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import Avatar from "../../Avatar";
 import DeskIllustration from "../../DeskIllustration";
 import ThemeToggle from "../../ThemeToggle";
-import { DarkBlinkingLogo, LightBlinkingLogo } from "../../BlinkingLogo";
+import {
+  DarkMobileBlinkingLogo,
+  LightMobileBlinkingLogo,
+} from "../../BlinkingLogo";
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
@@ -87,9 +90,13 @@ const HOBBIES = [
 /// Private Components ///
 function Logo({ theme }) {
   if (window.matchMedia("(hover: hover)").matches) {
-    return theme === "light" ? <LightBlinkingLogo /> : <DarkBlinkingLogo />;
+    return theme === "light" ? (
+      <LightMobileBlinkingLogo />
+    ) : (
+      <DarkMobileBlinkingLogo />
+    );
   }
-  return <img alt="website logo" src={`/static-logo/${theme}.svg`} />;
+  return <img alt="website logo" src={`/static-logo/${theme}-mobile.svg`} />;
 }
 
 function ShowcaseCard({ content, s }) {
@@ -257,10 +264,13 @@ function Landscape({ fragmentId, setTheme, theme }) {
             </section>
             <section className={s.meLinks}>
               <a className={s.meLink} href="//github.com/melody-ho">
-                <img alt="GitHub" src={`/github-icon/${theme}.svg`} />
+                <img alt="GitHub" src={`/github-icon/${theme}-mobile.svg`} />
               </a>
               <a className={s.meLink} href="//linkedin.com/in/melodyho-profile">
-                <img alt="LinkedIn" src={`/linkedin-icon/${theme}.svg`} />
+                <img
+                  alt="LinkedIn"
+                  src={`/linkedin-icon/${theme}-mobile.svg`}
+                />
               </a>
             </section>
             <hr className={s.meHorizontalRule} />
