@@ -1,0 +1,35 @@
+.enter {
+  transform: translateX(90vw);
+}
+
+.enterActive {
+  transform: translateX(0vw);
+  transition: transform 1500ms;
+}
+
+.exit {
+  transform: translateX(0vw);
+}
+
+.exitActive {
+  transform: translateX(-90vw);
+  transition: transform 1500ms;
+}
+
+.enter.page,
+.enterActive.page,
+.exit.page,
+.exitActive.page {
+  overflow: clip;
+}
+
+.enter .meHeaderBackground,
+.enterActive .meHeaderBackground {
+  opacity: 0;
+}
+
+.enter .meContentBackground,
+.enterActive .meContentBackground {
+  height: calc(65vh - 1.75 * var(--header-font-size));
+  top: calc(1.75 * var(--header-font-size));
+}

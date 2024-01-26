@@ -129,24 +129,6 @@
   width: 100%;
 }
 
-.pageEnter {
-  transform: translateX(90vw);
-}
-
-.pageEnterActive {
-  transform: translateX(0vw);
-  transition: transform 1500ms;
-}
-
-.pageExit {
-  transform: translateX(0vw);
-}
-
-.pageExitActive {
-  transform: translateX(-90vw);
-  transition: transform 1500ms;
-}
-
 .avatar {
   bottom: calc(var(--footer-height) + 2vh);
   height: 25vh;

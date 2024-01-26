@@ -255,7 +255,7 @@ function Portrait({ fragmentId, setTheme, theme }) {
                     <img
                       alt={hobby.text}
                       className={s.meHobbyImg}
-                      src={`/${hobby.img}/${theme}.svg`}
+                      src={`/${hobby.img}/${theme}-mobile.svg`}
                     />
                     <p className={s.meHobbyText}>{hobby.text}</p>
                   </li>

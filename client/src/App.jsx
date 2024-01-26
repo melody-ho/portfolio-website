@@ -17,6 +17,7 @@ import darkTheme from "./dark.module.css";
 import { DarkBlinkingLogo, LightBlinkingLogo } from "./components/BlinkingLogo";
 import lightTheme from "./light.module.css";
 import linkTransition from "./linkTransition.module.css";
+import pageTransition from "./pageTransition.module.css";
 
 /// Constants ///
 const PAGE_TRANSITION_DURATION = 1500;
@@ -124,10 +125,10 @@ function App() {
           <TransitionGroup>
             <CSSTransition
               classNames={{
-                enter: s.pageEnter,
-                enterActive: s.pageEnterActive,
-                exit: s.pageExit,
-                exitActive: s.pageExitActive,
+                enter: pageTransition.enter,
+                enterActive: pageTransition.enterActive,
+                exit: pageTransition.exit,
+                exitActive: pageTransition.exitActive,
               }}
               key={location.pathname}
               nodeRef={nodeRef}
@@ -136,7 +137,7 @@ function App() {
               }}
               timeout={PAGE_TRANSITION_DURATION}
             >
-              <div className={s.page} ref={nodeRef}>
+              <div className={`${s.page} ${pageTransition.page}`} ref={nodeRef}>
                 <ThemeContext.Provider value={theme}>
                   {outlet}
                 </ThemeContext.Provider>

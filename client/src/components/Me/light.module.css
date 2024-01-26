@@ -1,0 +1,175 @@
+.component {
+  --header-font-size: calc(26px + 2vw);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  position: relative;
+}
+
+.leftSection {
+  margin-left: 11vw;
+}
+
+.headerBackground,
+.header {
+  position: fixed;
+  z-index: 1;
+}
+
+.headerBackground {
+  background-color: rgb(var(--medium-secondary-rgb));
+  height: calc(var(--header-font-size) * 1.75);
+  width: calc(100% / 3 * 2 - 11vw);
+}
+
+.header {
+  align-items: flex-end;
+  display: flex;
+  font-size: var(--header-font-size);
+  gap: 0.25em;
+}
+
+.profilePhoto {
+  height: 2em;
+  width: 2em;
+}
+
+.mainHeading {
+  -webkit-text-stroke: 0.05em rgb(var(--light-primary-rgb));
+  color: rgb(var(--light-secondary-rgb));
+  font-family: eaves-xl-mod-ultra;
+}
+
+.contentBackground {
+  background-color: rgb(var(--dark-primary-rgb));
+  border-bottom-left-radius: calc(0.2 * var(--header-font-size));
+  height: 65vh;
+  position: fixed;
+  width: calc(100% / 3 * 2 - 11vw);
+}
+
+.content {
+  color: rgb(var(--light-primary-rgb));
+  font-size: calc(10px + 1vw);
+  padding: 5% 5% calc(5% + 10vh) 5%;
+  position: relative;
+  top: calc(2 * var(--header-font-size));
+}
+
+.tagline {
+  font-family: acumin-black;
+  margin: 1em 0 2.5em 0;
+}
+
+.horizontalRule {
+  border-top: rgb(var(--light-primary-rgb)) solid 0.05em;
+}
+
+.subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5em;
+  margin: 2.5em 0 2.5em;
+}
+
+.subheading {
+  font-family: eaves-xl-mod-bold;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.techSkills {
+  display: flex;
+  flex-direction: column;
+  font-family: monolisa-light;
+  font-size: calc(12px + 0.75vw);
+  gap: 1.5em;
+  letter-spacing: -0.05em;
+  padding: 0 0.5em;
+}
+
+.techSkill {
+  display: flex;
+  justify-content: space-between;
+}
+
+.techSkillsBar {
+  border: rgb(var(--dark-secondary-rgb)) solid 0.1em;
+  border-radius: 0.5em;
+  display: grid;
+  gap: 0.1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 1.5em;
+  overflow: clip;
+  width: 75%;
+}
+
+.techSkillsBarSolid {
+  background-color: rgb(var(--dark-secondary-rgb));
+}
+
+.certificates {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 1vw);
+  gap: 2em;
+  padding-left: 0.5em;
+}
+
+.certificate {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+.certificateImg {
+  width: 3em;
+}
+
+.certificateTitle {
+  font-family: acumin-medium;
+}
+
+.certificateLink {
+  color: rgb(var(--light-primary-rgb));
+  font-family: acumin-extralight;
+  font-size: calc(6px + 1vw);
+}
+
+.hobbies {
+  column-gap: 2%;
+  display: grid;
+  font-size: calc(8px + 0.75vw);
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-right: 2em;
+  row-gap: 2.5em;
+}
+
+.hobby {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.hobbyImg {
+  width: 4em;
+}
+
+.hobbyText {
+  font-family: acumin-regular;
+}
+
+.resumeBtn {
+  background-color: rgb(var(--accent-rgb));
+  border: rgb(var(--dark-primary-rgb)) solid 0.2em;
+  border-radius: 2.5em;
+  color: rgb(var(--dark-primary-rgb));
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(12px + 1vw);
+  margin-left: 5%;
+  margin-top: 10%;
+  padding: 0.5em 2em;
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+}
