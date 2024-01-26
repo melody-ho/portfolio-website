@@ -24,17 +24,17 @@ import lightTheme from "./light.module.css";
 /// Constants ///
 const INFINITE_CONTENT = {
   ...INFINITE,
-  imgSrc: "/infinite-square-screenshot.webp",
+  imgSrc: "/images/infinite-square.webp",
 };
 
 const JOURN_CONTENT_LIGHT = {
   ...JOURN,
-  imgSrc: "/journ-square-light-screenshot.webp",
+  imgSrc: "/images/journ-square-light.webp",
 };
 
 const JOURN_CONTENT_DARK = {
   ...JOURN,
-  imgSrc: "/journ-square-dark-screenshot.webp",
+  imgSrc: "/images/journ-square-dark.webp",
 };
 
 /// Private Components ///
@@ -46,7 +46,7 @@ function Logo({ theme }) {
       <DarkMobileBlinkingLogo />
     );
   }
-  return <img alt="website logo" src={`/static-logo/${theme}-mobile.svg`} />;
+  return <img alt="website logo" src={`/images/logo/${theme}-mobile.svg`} />;
 }
 
 function ShowcaseCard({ content, s }) {
@@ -196,7 +196,7 @@ function Landscape({ fragmentId, setTheme, theme }) {
                 <img
                   alt="Melody Ho"
                   className={s.meProfilePhoto}
-                  src={`/profile-picture/mobile-${theme}.png`}
+                  src={`/images/profile-picture/${theme}-mobile.png`}
                 />
                 <h1 className={s.meHeading}>About Me</h1>
               </header>
@@ -214,12 +214,12 @@ function Landscape({ fragmentId, setTheme, theme }) {
             </section>
             <section className={s.meLinks}>
               <a className={s.meLink} href="//github.com/melody-ho">
-                <img alt="GitHub" src={`/github-icon/${theme}-mobile.svg`} />
+                <img alt="GitHub" src={`/images/github/${theme}-mobile.svg`} />
               </a>
               <a className={s.meLink} href="//linkedin.com/in/melodyho-profile">
                 <img
                   alt="LinkedIn"
-                  src={`/linkedin-icon/${theme}-mobile.svg`}
+                  src={`/images/linkedin/${theme}-mobile.svg`}
                 />
               </a>
             </section>
@@ -270,7 +270,7 @@ function Landscape({ fragmentId, setTheme, theme }) {
                       <img
                         alt={hobby.text}
                         className={s.meHobbyImg}
-                        src={`/${hobby.img}/${theme}-mobile.svg`}
+                        src={`/images/${hobby.img}/${theme}-mobile.svg`}
                       />
                       <p className={s.meHobbyText}>{hobby.text}</p>
                     </li>

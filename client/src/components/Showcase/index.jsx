@@ -13,19 +13,19 @@ import lightTheme from "./light.module.css";
 const INFINITE_CONTENT = {
   ...INFINITE,
   id: "infinite",
-  imgSrc: "/infinite-square-screenshot.webp",
+  imgSrc: "/images/infinite-square.webp",
 };
 
 const JOURN_CONTENT_LIGHT = {
   ...JOURN,
   id: "journ",
-  imgSrc: "/journ-square-light-screenshot.webp",
+  imgSrc: "/images/journ-square-light.webp",
 };
 
 const JOURN_CONTENT_DARK = {
   ...JOURN,
   id: "journ",
-  imgSrc: "/journ-square-dark-screenshot.webp",
+  imgSrc: "/images/journ-square-dark.webp",
 };
 
 /// Private Components ///

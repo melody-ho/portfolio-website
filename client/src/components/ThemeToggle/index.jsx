@@ -83,7 +83,7 @@ function ThemeToggle({ setTheme, theme }) {
       <lottie-player
         id="themeToggle"
         ref={themeToggleRef}
-        src="/theme-toggle.json"
+        src="/animations/theme-toggle.json"
       />
     </button>
   );

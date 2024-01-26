@@ -68,7 +68,12 @@ function Avatar() {
 
   // render //
   return (
-    <lottie-player autoplay id="avatar" ref={avatarRef} src="/avatar.json" />
+    <lottie-player
+      autoplay
+      id="avatar"
+      ref={avatarRef}
+      src="/animations/avatar.json"
+    />
   );
 }
 

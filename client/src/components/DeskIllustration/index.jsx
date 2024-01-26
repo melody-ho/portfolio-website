@@ -58,12 +58,12 @@ function DeskIllustration({ theme }) {
       <lottie-player
         id="light"
         ref={animatedLightRef}
-        src="/ceiling-light.json"
+        src="/animations/ceiling-light.json"
       />
       <img
         alt="illustration of desk with computer"
         className={s.lowerLayer}
-        src="/desk.svg"
+        src="/images/desk.svg"
       />
     </>
   );

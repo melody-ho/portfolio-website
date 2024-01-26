@@ -27,7 +27,7 @@ function Logo({ theme }) {
   if (window.matchMedia("(hover: hover)").matches) {
     return theme === "light" ? <LightBlinkingLogo /> : <DarkBlinkingLogo />;
   }
-  return <img alt="website logo" src={`/static-logo/${theme}-laptop.svg`} />;
+  return <img alt="website logo" src={`/images/logo/${theme}-laptop.svg`} />;
 }
 
 /// Component ///
@@ -165,7 +165,7 @@ function App() {
             </div>
             <div className={s.footerRight}>
               <a className={s.footerIconLink} href="//github.com/melody-ho">
-                <img alt="GitHub" src={`/github-icon/${theme}-laptop.svg`} />
+                <img alt="GitHub" src={`/images/github/${theme}-laptop.svg`} />
               </a>
               <a
                 className={s.footerIconLink}
@@ -173,7 +173,7 @@ function App() {
               >
                 <img
                   alt="LinkedIn"
-                  src={`/linkedin-icon/${theme}-laptop.svg`}
+                  src={`/images/linkedin/${theme}-laptop.svg`}
                 />
               </a>
             </div>

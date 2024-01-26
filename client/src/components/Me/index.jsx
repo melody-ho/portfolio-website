@@ -46,7 +46,7 @@ function Me() {
           <img
             alt="Melody Ho"
             className={s.profilePhoto}
-            src={`/profile-picture/laptop-${theme}.png`}
+            src={`/images/profile-picture/${theme}-laptop.png`}
           />
           <h1 className={s.mainHeading}>About Me</h1>
         </header>
@@ -103,7 +103,7 @@ function Me() {
                     <img
                       alt={hobby.text}
                       className={s.hobbyImg}
-                      src={`/${hobby.img}/${theme}-laptop.svg`}
+                      src={`/images/${hobby.img}/${theme}-laptop.svg`}
                     />
                     <p className={s.hobbyText}>{hobby.text}</p>
                   </li>

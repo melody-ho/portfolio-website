@@ -45,7 +45,7 @@ function BlinkingLogo({ device, theme }) {
     <lottie-player
       id={`${theme}BlinkingLogo`}
       ref={blinkingLogoRef}
-      src={`/blinking-logo/${theme}-${device}.json`}
+      src={`/animations/logo/${theme}-${device}.json`}
     />
   );
 }
