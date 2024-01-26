@@ -169,7 +169,7 @@ function App() {
               </a>
               <a
                 className={s.footerIconLink}
-                href="//linkedin.com/in/melodyho-profile"
+                href="//linkedin.com/in/melodyho-dev"
               >
                 <img
                   alt="LinkedIn"

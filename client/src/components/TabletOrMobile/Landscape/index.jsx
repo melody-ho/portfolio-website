@@ -216,7 +216,7 @@ function Landscape({ fragmentId, setTheme, theme }) {
               <a className={s.meLink} href="//github.com/melody-ho">
                 <img alt="GitHub" src={`/images/github/${theme}-mobile.svg`} />
               </a>
-              <a className={s.meLink} href="//linkedin.com/in/melodyho-profile">
+              <a className={s.meLink} href="//linkedin.com/in/melodyho-dev">
                 <img
                   alt="LinkedIn"
                   src={`/images/linkedin/${theme}-mobile.svg`}
