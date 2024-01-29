@@ -54,7 +54,11 @@ function ShowcaseCard({ content, s }) {
     <li className={s.showcaseContainer}>
       <p className={s.showcaseLabel}>showcase</p>
       <h1 className={s.showcaseTitle}>{content.title}</h1>
-      <img alt={content.imgAlt} src={content.imgSrc} />
+      <img
+        alt={content.imgAlt}
+        className={s.showcaseImg}
+        src={content.imgSrc}
+      />
       <p className={s.showcaseDescription}>{content.description}</p>
       <div className={s.showcaseSkills}>
         {content.skills.map((skill) => (
@@ -197,11 +201,16 @@ function Portrait({ fragmentId, setTheme, theme }) {
           </section>
           <section className={s.meLinks}>
             <a className={s.meLink} href="//github.com/melody-ho">
-              <img alt="GitHub" src={`/images/github/${theme}-mobile.svg`} />
+              <img
+                alt="GitHub"
+                className={s.meLinkImg}
+                src={`/images/github/${theme}-mobile.svg`}
+              />
             </a>
             <a className={s.meLink} href="//linkedin.com/in/melodyho-dev">
               <img
                 alt="LinkedIn"
+                className={s.meLinkImg}
                 src={`/images/linkedin/${theme}-mobile.svg`}
               />
             </a>

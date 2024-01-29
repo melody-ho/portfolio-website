@@ -127,6 +127,10 @@
   font-size: calc(26px + 1vw);
 }
 
+.showcaseImg {
+  width: 100%;
+}
+
 .showcaseDescription {
   font-family: acumin-light;
 }
@@ -204,6 +208,10 @@
 .meLink {
   display: flex;
   height: 100%;
+  width: 100%;
+}
+
+.meLinkImg {
   width: 100%;
 }
 
