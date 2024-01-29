@@ -27,6 +27,7 @@ phases:
 artifacts:
   files:
     - "README.md"
+    - "Procfile"
     - "client/dist/**/*"
     - "server/**/*"
   name: portfolio-website-$(date +%Y-%m-%d)
