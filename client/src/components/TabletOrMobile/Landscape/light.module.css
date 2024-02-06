@@ -287,7 +287,7 @@
   border-radius: 0.5em;
   display: grid;
   gap: 0.1em;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 1.5em;
   overflow: clip;
   width: 50vw;

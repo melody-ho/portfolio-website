@@ -13,11 +13,13 @@ import pageTransition from "../../pageTransition.module.css";
 /// Private Components ///
 function TechSkillsBar({ level, s }) {
   return (
-    <div className={s.techSkillsBar}>
+    <div
+      aria-description={`skill level ${level} out of 3`}
+      className={s.techSkillsBar}
+    >
       <div className={s.techSkillsBarSolid} />
       <div className={level >= 2 ? s.techSkillsBarSolid : null} />
       <div className={level === 3 ? s.techSkillsBarSolid : null} />
-      <div />
     </div>
   );
 }

@@ -81,11 +81,13 @@ function ShowcaseCard({ content, s }) {
 
 function TechSkillsBar({ level, s }) {
   return (
-    <div className={s.meTechSkillsBar}>
+    <div
+      aria-description={`skill level ${level} out of 3`}
+      className={s.meTechSkillsBar}
+    >
       <div className={s.meTechSkillsBarSolid} />
       <div className={level >= 2 ? s.meTechSkillsBarSolid : null} />
       <div className={level === 3 ? s.meTechSkillsBarSolid : null} />
-      <div />
     </div>
   );
 }
