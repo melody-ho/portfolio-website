@@ -57,8 +57,9 @@ function Me() {
         />
         <div className={s.content}>
           <p className={s.tagline}>
-            Hi! I&apos;m Melody Ho, a frontend-focused software engineer based
-            in the US.
+            Hello there! I&apos;m Melody Ho, a frontend-focused software
+            engineer with a profound passion for creating seamless user
+            experiences through the art of coding.
           </p>
           <hr className={s.horizontalRule} />
           <div className={s.subsections}>

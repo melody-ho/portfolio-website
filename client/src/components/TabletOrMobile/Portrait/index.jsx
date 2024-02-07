@@ -197,8 +197,9 @@ function Portrait({ fragmentId, setTheme, theme }) {
           </header>
           <section className={s.meTagline}>
             <p>
-              Hi! I&apos;m Melody Ho, a frontend-focused software engineer based
-              in the US.
+              Hello there! I&apos;m Melody Ho, a frontend-focused software
+              engineer with a profound passion for creating seamless user
+              experiences through the art of coding.
             </p>
           </section>
           <section className={s.meLinks}>
