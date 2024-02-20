@@ -145,12 +145,13 @@
 
 .showcaseDescription {
   font-family: acumin-light;
+  font-size: 0.9em;
 }
 
 .showcaseSkills {
   display: flex;
   flex-wrap: wrap;
-  font-size: calc(8px + 0.25vw);
+  font-size: calc(8px + 0.2vw);
   gap: 0.6em;
 }
 

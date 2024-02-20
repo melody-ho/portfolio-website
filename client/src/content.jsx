@@ -11,8 +11,8 @@ const INFINITE = {
   title: "Infinite: A Game",
   imgAlt: "screenshot of Infinite",
   description:
-    "Infinite is a browser game where you can expand the galaxy endlessly by matching the edges of hexagonal tiles.",
-  skills: ["JavaScript", "HTML", "CSS", "Express"],
+    "Infinite is a browser puzzle game in which users can continuously expand the galaxy by matching edges of hexagonal tiles, designed to always give valid moves.",
+  skills: ["HTML", "CSS", "JavaScript", "Express", "Jest"],
   githubUrl: "//github.com/melody-ho/infinite",
   demoUrl: "//infinite.melodyho.dev",
 };
@@ -21,8 +21,8 @@ const JOURN = {
   title: "Journ: A Scrapbook",
   imgAlt: "screenshot of Journ",
   description:
-    "Journ is a digital scrapbooking web app for capturing life's moments with images, videos, and text.",
-  skills: ["React", "Next.js", "Sequelize", "SQL", "AWS S3"],
+    "Journ is a digital scrapbooking web app that enables users to document moments using images, videos, and text, with tagging and filtering functionality.",
+  skills: ["CSS Modules", "React", "Next.js", "Sequelize", "AWS S3"],
   githubUrl: "//github.com/melody-ho/journ",
   demoUrl: "//journ.melodyho.dev",
 };
