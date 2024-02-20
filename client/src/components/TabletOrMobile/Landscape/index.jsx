@@ -11,11 +11,11 @@ import {
 } from "../../BlinkingLogo";
 // variables
 import {
-  CERTIFICATES,
   HOBBIES,
   INFINITE,
   JOURN,
-  TECHNICAL_SKILLS,
+  ME,
+  TOOLBOX_SUBSECTIONS,
 } from "../../../content";
 // assets
 import darkTheme from "./dark.module.css";
@@ -78,19 +78,6 @@ function ShowcaseCard({ content, s }) {
         </div>
       </div>
     </li>
-  );
-}
-
-function TechSkillsBar({ level, s }) {
-  return (
-    <div
-      aria-description={`skill level ${level} out of 3`}
-      className={s.meTechSkillsBar}
-    >
-      <div className={s.meTechSkillsBarSolid} />
-      <div className={level >= 2 ? s.meTechSkillsBarSolid : null} />
-      <div className={level === 3 ? s.meTechSkillsBarSolid : null} />
-    </div>
   );
 }
 
@@ -209,11 +196,7 @@ function Landscape({ fragmentId, setTheme, theme }) {
               </section>
             </div>
             <section className={s.meTagline}>
-              <p>
-                Hello there! I&apos;m Melody Ho, a frontend-focused software
-                engineer with a profound passion for creating seamless user
-                experiences through the art of coding.
-              </p>
+              <p>{ME}</p>
             </section>
             <section className={s.meLinks}>
               <a className={s.meLink} href="//github.com/melody-ho">
@@ -231,47 +214,37 @@ function Landscape({ fragmentId, setTheme, theme }) {
                 />
               </a>
             </section>
-            <hr className={s.meHorizontalRule} />
             <div className={s.meSubsections}>
               <section>
-                <h2 className={s.meSubheading}>technical skills</h2>
-                <ul className={s.meTechSkills}>
-                  {TECHNICAL_SKILLS.map((skill) => (
-                    <li className={s.meTechSkill} key={skill.name}>
-                      <p>{skill.name}</p>
-                      <TechSkillsBar level={skill.level} s={s} />
-                    </li>
+                <h2 className={s.meSubheading}>toolbox</h2>
+                <div className={s.meSubheadingDecoration} />
+                <div className={s.meToolboxSubsections}>
+                  {TOOLBOX_SUBSECTIONS.map((toolboxSubsection) => (
+                    <section key={toolboxSubsection.title}>
+                      <h3 className={s.meToolboxSubheading}>
+                        <span className={s.meToolboxSubheadingContent}>
+                          {toolboxSubsection.title}
+                        </span>
+                      </h3>
+                      <ul className={s.meToolboxToolList}>
+                        {toolboxSubsection.tools.map((tool) => (
+                          <li className={s.meTool} key={tool.name}>
+                            <img
+                              alt={tool.name}
+                              className={s.meToolImg}
+                              src={`/images/${tool.img}/${theme}-mobile.svg`}
+                            />
+                            <p className={s.meToolText}>{tool.name}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
                   ))}
-                </ul>
+                </div>
               </section>
               <section>
-                <h2 className={s.meSubheading}>certificates</h2>
-                <ul className={s.meCertificates}>
-                  {CERTIFICATES.map((certificate) => (
-                    <li className={s.meCertificate} key={certificate.title}>
-                      <img
-                        alt={certificate.title}
-                        className={s.meCertificateImg}
-                        src={certificate.img}
-                      />
-                      <div>
-                        <p className={s.meCertificateTitle}>
-                          {certificate.title}
-                        </p>
-                        <a
-                          aria-label={`Open ${certificate.title} certificate`}
-                          className={s.meCertificateLink}
-                          href={certificate.url}
-                        >
-                          See Certificate
-                        </a>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-              <section>
-                <h2 className={s.meSubheading}>hobbies</h2>
+                <h2 className={s.meSubheading}>toy box</h2>
+                <div className={s.meSubheadingDecoration} />
                 <ul className={s.meHobbies}>
                   {HOBBIES.map((hobby) => (
                     <li className={s.meHobby} key={hobby.text}>

@@ -229,7 +229,8 @@
 }
 
 .meTagline {
-  font-family: acumin-semibold;
+  font-family: acumin-medium;
+  font-size: 0.9em;
 }
 
 .meLinks {
@@ -249,80 +250,72 @@
   width: 100%;
 }
 
-.meHorizontalRule {
-  border-bottom: rgb(var(--light-primary-rgb)) solid 0.02em;
-  margin-top: 1em;
-  width: 100%;
-}
-
 .meSubsections {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 4em;
+  margin-top: 2em;
 }
 
 .meSubheading {
-  font-family: eaves-xl-mod-bold;
-  font-size: 1.5em;
-  margin: 2em 0 1.5em 0;
+  background-color: rgb(var(--light-primary-rgb));
+  color: rgb(var(--dark-primary-rgb));
+  display: inline-block;
+  font-family: monolisa-black;
+  font-size: 0.8em;
+  padding: 0.1em 1em;
 }
 
-.meTechSkills {
+.meSubheadingDecoration {
+  border-color: rgb(var(--light-primary-rgb)) transparent transparent
+    transparent;
+  border-style: solid;
+  border-width: 0.6em 0.5em 0 0;
+  margin-bottom: 1em;
+  width: 0px;
+}
+
+.meToolboxSubsections {
   display: flex;
   flex-direction: column;
-  font-family: monolisa-regular;
-  font-size: calc(12px + 0.5vw);
-  gap: 1.5em;
-  letter-spacing: -0.05em;
-  padding: 0 2.5em 0 1.25em;
+  gap: 2.5em;
+  padding: 0 1em 0 0.5em;
 }
 
-.meTechSkill {
-  display: flex;
-  justify-content: space-between;
+.meToolboxSubheading {
+  border-bottom: 0.02em solid rgb(var(--light-primary-rgb));
+  font-family: monolisa-thin;
+  font-size: 0.75em;
+  line-height: 0;
+  margin: 1em 0 2.5em 0;
 }
 
-.meTechSkillsBar {
-  border: rgb(var(--dark-secondary-rgb)) solid 0.1em;
-  border-radius: 0.5em;
+.meToolboxSubheadingContent {
+  background-color: rgb(var(--dark-primary-rgb));
+  padding-right: 0.5em;
+}
+
+.meToolboxToolList {
   display: grid;
-  gap: 0.1em;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 1.5em;
-  overflow: clip;
-  width: 50vw;
+  font-size: calc(8px + 0.75vw);
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1em;
 }
 
-.meTechSkillsBarSolid {
-  background-color: rgb(var(--dark-secondary-rgb));
-}
-
-.meCertificates {
-  display: flex;
-  flex-direction: column;
-  font-size: calc(12px + 1vw);
-  gap: 1.5em;
-  padding-left: 1.25em;
-}
-
-.meCertificate {
+.meTool {
   align-items: center;
   display: flex;
+  flex-direction: column;
   gap: 1em;
 }
 
-.meCertificateImg {
+.meToolImg {
+  height: 3em;
   width: 3em;
 }
 
-.meCertificateTitle {
-  font-family: acumin-semibold;
-}
-
-.meCertificateLink {
-  color: rgb(var(--light-primary-rgb));
-  font-family: acumin-light;
-  font-size: calc(10px + 1vw);
+.meToolText {
+  font-family: acumin-extralight;
 }
 
 .meHobbies {
@@ -342,11 +335,12 @@
 }
 
 .meHobbyImg {
+  height: 4em;
   width: 4em;
 }
 
 .meHobbyText {
-  font-family: acumin-regular;
+  font-family: acumin-extralight;
 }
 
 .footer {

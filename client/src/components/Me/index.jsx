@@ -4,25 +4,11 @@ import { useContext, useEffect, useState } from "react";
 // contexts
 import ThemeContext from "../../ThemeContext";
 // variables
-import { CERTIFICATES, HOBBIES, TECHNICAL_SKILLS } from "../../content";
+import { HOBBIES, ME, TOOLBOX_SUBSECTIONS } from "../../content";
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
 import pageTransition from "../../pageTransition.module.css";
-
-/// Private Components ///
-function TechSkillsBar({ level, s }) {
-  return (
-    <div
-      aria-description={`skill level ${level} out of 3`}
-      className={s.techSkillsBar}
-    >
-      <div className={s.techSkillsBarSolid} />
-      <div className={level >= 2 ? s.techSkillsBarSolid : null} />
-      <div className={level === 3 ? s.techSkillsBarSolid : null} />
-    </div>
-  );
-}
 
 /// Component ///
 function Me() {
@@ -56,50 +42,38 @@ function Me() {
           className={`${s.contentBackground} ${pageTransition.meContentBackground}`}
         />
         <div className={s.content}>
-          <p className={s.tagline}>
-            Hello there! I&apos;m Melody Ho, a frontend-focused software
-            engineer with a profound passion for creating seamless user
-            experiences through the art of coding.
-          </p>
-          <hr className={s.horizontalRule} />
+          <p className={s.tagline}>{ME}</p>
           <div className={s.subsections}>
             <section>
-              <h2 className={s.subheading}>technical skills</h2>
-              <ul className={s.techSkills}>
-                {TECHNICAL_SKILLS.map((skill) => (
-                  <li className={s.techSkill} key={skill.name}>
-                    <p>{skill.name}</p>
-                    <TechSkillsBar level={skill.level} s={s} />
-                  </li>
+              <h2 className={s.subheading}>toolbox</h2>
+              <div className={s.subheadingDecoration} />
+              <div className={s.toolboxSubsections}>
+                {TOOLBOX_SUBSECTIONS.map((toolboxSubsection) => (
+                  <section key={toolboxSubsection.title}>
+                    <h3 className={s.toolboxSubheading}>
+                      <span className={s.toolboxSubheadingContent}>
+                        {toolboxSubsection.title}
+                      </span>
+                    </h3>
+                    <ul className={s.toolboxToolList}>
+                      {toolboxSubsection.tools.map((tool) => (
+                        <li className={s.tool} key={tool.name}>
+                          <img
+                            alt={tool.name}
+                            className={s.toolImg}
+                            src={`/images/${tool.img}/${theme}-laptop.svg`}
+                          />
+                          <p className={s.toolText}>{tool.name}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 ))}
-              </ul>
+              </div>
             </section>
             <section>
-              <h2 className={s.subheading}>certificates</h2>
-              <ul className={s.certificates}>
-                {CERTIFICATES.map((certificate) => (
-                  <li className={s.certificate} key={certificate.title}>
-                    <img
-                      alt={certificate.title}
-                      className={s.certificateImg}
-                      src={certificate.img}
-                    />
-                    <div>
-                      <p className={s.certificateTitle}>{certificate.title}</p>
-                      <a
-                        aria-label={`Open ${certificate.title} certificate`}
-                        className={s.certificateLink}
-                        href={certificate.url}
-                      >
-                        See Certificate
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </section>
-            <section>
-              <h2 className={s.subheading}>hobbies</h2>
+              <h2 className={s.subheading}>toy box</h2>
+              <div className={s.subheadingDecoration} />
               <ul className={s.hobbies}>
                 {HOBBIES.map((hobby) => (
                   <li className={s.hobby} key={hobby.text}>

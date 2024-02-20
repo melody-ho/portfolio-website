@@ -1,28 +1,10 @@
-const CERTIFICATES = [
-  {
-    title: "Harvard CS50",
-    img: "/images/harvard-cs50.png",
-    url: "//cs50.harvard.edu/certificates/a4d09661-6937-4857-8722-4c49a0159bfa",
-  },
-  {
-    title: "Google UX Design Professional",
-    img: "/images/google-ux-design.png",
-    url: "//www.credly.com/badges/d239e484-05c3-4f90-9cd0-a4c28062bfdd/public_url",
-  },
-  {
-    title: "Adobe Certified Professional in Visual Design",
-    img: "/images/adobe-visual-design.png",
-    url: "//www.credly.com/badges/744a236b-bd2e-4562-85d5-02b77e140c40/public_url",
-  },
-];
-
 const HOBBIES = [
-  { text: "SINGING", img: "singing" },
-  { text: "LIVE STREAMING", img: "live" },
-  { text: "MOVIES", img: "movies" },
-  { text: "TRAVEL", img: "travel" },
-  { text: "SPIN", img: "spin" },
-  { text: "YOGA", img: "yoga" },
+  { text: "Singing", img: "singing" },
+  { text: "Live Streaming", img: "live" },
+  { text: "Movies", img: "movies" },
+  { text: "Travel", img: "travel" },
+  { text: "Spin", img: "spin" },
+  { text: "Yoga", img: "yoga" },
 ];
 
 const INFINITE = {
@@ -45,19 +27,47 @@ const JOURN = {
   demoUrl: "//journ.melodyho.dev",
 };
 
-const TECHNICAL_SKILLS = [
-  { name: "JavaScript", level: 3 },
-  { name: "HTML", level: 3 },
-  { name: "CSS", level: 3 },
-  { name: "React", level: 3 },
-  { name: "Next.js", level: 3 },
-  { name: "Figma", level: 3 },
-  { name: "Adobe XD", level: 2 },
-  { name: "Express", level: 2 },
-  { name: "SQL", level: 2 },
-  { name: "MongoDB", level: 2 },
-  { name: "C", level: 1 },
-  { name: "Python", level: 1 },
+const ME =
+  "Hello there! I'm Melody Ho, a full-stack software engineer with a specialization in front-end development. I am dedicated to crafting user-centric experiences with code.";
+
+const TOOLBOX_SUBSECTIONS = [
+  {
+    title: "front end",
+    tools: [
+      { name: "HTML", img: "html" },
+      { name: "CSS", img: "css" },
+      { name: "JavaScript", img: "javascript" },
+      { name: "React", img: "react" },
+    ],
+  },
+  {
+    title: "back end",
+    tools: [
+      { name: "Node.js", img: "nodedotjs" },
+      { name: "Express", img: "express" },
+      { name: "Sequelize", img: "sequelize" },
+      { name: "MySQL", img: "mysql" },
+      { name: "MongoDB", img: "mongodb" },
+    ],
+  },
+  {
+    title: "full stack",
+    tools: [{ name: "Next.js", img: "nextdotjs" }],
+  },
+  {
+    title: "testing",
+    tools: [{ name: "Jest", img: "jest" }],
+  },
+  {
+    title: "design",
+    tools: [
+      { name: "Figma", img: "figma" },
+      { name: "XD", img: "xd" },
+      { name: "Illustrator", img: "illustrator" },
+      { name: "After Effects", img: "after-effects" },
+      { name: "Photoshop", img: "photoshop" },
+    ],
+  },
 ];
 
-export { CERTIFICATES, HOBBIES, INFINITE, JOURN, TECHNICAL_SKILLS };
+export { HOBBIES, INFINITE, JOURN, ME, TOOLBOX_SUBSECTIONS };

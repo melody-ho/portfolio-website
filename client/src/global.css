@@ -173,9 +173,12 @@
 }
 
 html {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -moz-text-size-adjust: none;
+  -webkit-box-sizing: border-box;
+  -webkit-text-size-adjust: none;
   box-sizing: border-box;
+  text-size-adjust: none;
 }
 
 *,
