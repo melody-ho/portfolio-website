@@ -3,7 +3,7 @@
 # Melody Ho: Portfolio Website
 
 A portfolio website displaying my projects, technical skills, and additional information.  
-*Made with React.*
+*Made with CSS Modules, React, and Express.*
 
 **See now at:** <https://melodyho.dev>
 
