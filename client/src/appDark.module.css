@@ -1,0 +1,25 @@
+.leftBackgroundColor {
+  background-color: rgb(var(--dark-primary-rgb));
+}
+
+.rightBackgroundColor {
+  background-color: rgb(var(--medium-secondary-rgb));
+}
+
+.headerLogoLink {
+  color: rgb(var(--light-secondary-rgb));
+}
+
+.headerLink {
+  color: rgb(var(--light-primary-rgb));
+}
+
+.headerActiveLink::before {
+  border-bottom: rgba(var(--light-primary-rgb), 0.8) solid 0.125em;
+  border-left: rgba(var(--light-primary-rgb), 0.8) solid 0.125em;
+}
+
+.footerTextLink {
+  color: rgb(var(--dark-primary-rgb));
+  font-family: monolisa-bold;
+}

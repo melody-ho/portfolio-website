@@ -9,6 +9,7 @@ import { HOBBIES, ME, TOOLBOX_SUBSECTIONS } from "../../content";
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
 import pageTransition from "../../pageTransition.module.css";
+import s from "./index.module.css";
 
 /// Component ///
 function Me() {
@@ -16,11 +17,11 @@ function Me() {
   const theme = useContext(ThemeContext);
 
   // initialize CSS module //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // render //
@@ -28,7 +29,7 @@ function Me() {
     <div className={s.component}>
       <section className={s.leftSection}>
         <div
-          className={`${s.headerBackground} ${pageTransition.meHeaderBackground}`}
+          className={`${s.headerBackground} ${t.headerBackground} ${pageTransition.meHeaderBackground}`}
         />
         <header className={s.header}>
           <img
@@ -39,19 +40,21 @@ function Me() {
           <h1 className={s.mainHeading}>About Me</h1>
         </header>
         <div
-          className={`${s.contentBackground} ${pageTransition.meContentBackground}`}
+          className={`${s.contentBackground} ${t.contentBackground} ${pageTransition.meContentBackground}`}
         />
         <div className={s.content}>
           <p className={s.tagline}>{ME}</p>
           <div className={s.subsections}>
             <section>
-              <h2 className={s.subheading}>toolbox</h2>
+              <h2 className={`${s.subheading} ${t.subheading}`}>toolbox</h2>
               <div className={s.subheadingDecoration} />
               <div className={s.toolboxSubsections}>
                 {TOOLBOX_SUBSECTIONS.map((toolboxSubsection) => (
                   <section key={toolboxSubsection.title}>
                     <h3 className={s.toolboxSubheading}>
-                      <span className={s.toolboxSubheadingContent}>
+                      <span
+                        className={`${s.toolboxSubheadingContent} ${t.toolboxSubheadingContent}`}
+                      >
                         {toolboxSubsection.title}
                       </span>
                     </h3>
@@ -72,7 +75,7 @@ function Me() {
               </div>
             </section>
             <section>
-              <h2 className={s.subheading}>toy box</h2>
+              <h2 className={`${s.subheading} ${t.subheading}`}>toy box</h2>
               <div className={s.subheadingDecoration} />
               <ul className={s.hobbies}>
                 {HOBBIES.map((hobby) => (

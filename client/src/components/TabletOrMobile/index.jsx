@@ -8,6 +8,7 @@ import Portrait from "./Portrait";
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
+import s from "./index.module.css";
 
 /// Constants ///
 const validSubpaths = ["", "showcase", "me"];
@@ -18,11 +19,11 @@ function TabletOrMobile({ setTheme, theme }) {
   const isLandscape = useMediaQuery({ minAspectRatio: "16/9" });
 
   // initialize CSS module //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // get subpath //
@@ -32,15 +33,21 @@ function TabletOrMobile({ setTheme, theme }) {
   if (!validSubpaths.includes(subpath)) {
     return (
       <main
-        className={`${s.notFound} ${isLandscape ? s.landscape : s.portrait}`}
+        className={`${s.notFound} ${t.notFound} ${
+          isLandscape ? s.landscape : s.portrait
+        }`}
       >
-        <p className={s.notFoundMessage}>
-          <span className={s.notFoundMessageLarge}>Oops!</span>
+        <p className={`${s.notFoundMessage} ${t.notFoundMessage}`}>
+          <span
+            className={`${s.notFoundMessageLarge} ${t.notFoundMessageLarge}`}
+          >
+            Oops!
+          </span>
           <span className={s.notFoundMessageSmall}>
             This page does not exist.
           </span>
         </p>
-        <a className={s.notFoundLink} href="/">
+        <a className={`${s.notFoundLink} ${t.notFoundLink}`} href="/">
           Back to home
         </a>
       </main>

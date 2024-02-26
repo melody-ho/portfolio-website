@@ -1,0 +1,327 @@
+.body {
+  min-width: 380px;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  font-size: calc(16px + 1vw);
+  justify-content: space-between;
+  padding: max(25px, 5vw);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.headerLeft {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.headerRight {
+  align-items: center;
+  display: flex;
+  gap: max(10px, 5vw);
+}
+
+.link {
+  font-family: eaves-xl-mod-ultra;
+  text-decoration: none;
+}
+
+.themeToggle {
+  height: 3.5em;
+  width: 3.5em;
+}
+
+.home {
+  min-height: max(500px, 80vh);
+  overflow-x: clip;
+  position: relative;
+}
+
+.taglineWrapper {
+  align-items: center;
+  display: flex;
+  min-height: max(500px, 80vh);
+  padding: 0 max(25px, 5vw) calc(250px + 8vh) max(25px, 5vw);
+}
+
+.taglineBase {
+  font-family: eaves-xl-mod-regular;
+  font-size: calc(10px + 2vw);
+}
+
+.taglinePrimary {
+  color: rgb(var(--accent-rgb));
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(36px + 5vw);
+}
+
+.taglineSecondary {
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(12px + 5vw);
+}
+
+.taglineTertiary {
+  font-family: eaves-xl-san-heavy;
+  font-size: calc(12px + 3vw);
+}
+
+.deskIllustration {
+  bottom: 0;
+  left: calc((100vw - 375px - 12vh) / 2);
+  position: absolute;
+  width: calc(375px + 12vh);
+}
+
+.avatar {
+  -webkit-user-select: none;
+  bottom: -5px;
+  left: 55vw;
+  position: absolute;
+  user-select: none;
+  width: calc(125px + 4vh);
+}
+
+.showcase,
+.me {
+  min-height: 80vh;
+}
+
+.showcase {
+  padding: calc(50px + 5vh) calc(20px + 2vw);
+}
+
+.showcaseCards {
+  display: flex;
+  flex-direction: column;
+  gap: calc(25px + 2vh);
+}
+
+.showcaseContainer {
+  border-radius: 0.5em;
+  color: rgb(var(--light-primary-rgb));
+  display: flex;
+  flex-direction: column;
+  font-size: calc(12px + 1vw);
+  gap: 0.5em;
+  padding: 2.5em 2em;
+}
+
+.showcaseLabel {
+  font-family: monolisa-light;
+  font-size: calc(10px + 1vw);
+}
+
+.showcaseTitle {
+  font-family: eaves-xl-mod-ultra;
+  font-size: calc(26px + 1vw);
+}
+
+.showcaseImg {
+  width: 100%;
+}
+
+.showcaseDescription {
+  font-family: acumin-light;
+  font-size: 0.9em;
+}
+
+.showcaseSkills {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: calc(8px + 0.5vw);
+  gap: 0.6em;
+}
+
+.showcaseSkillContainer {
+  background-color: rgba(var(--light-primary-rgb), 0.9);
+  border-radius: 0.2em;
+  color: rgb(var(--dark-primary-rgb));
+  font-family: monolisa-light;
+  letter-spacing: -0.025em;
+  padding: 0.2em 0.5em;
+}
+
+.showcaseLinks {
+  display: flex;
+  font-size: calc(14px + 0.5vw);
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.showcaseLink {
+  border: 0.25em solid rgb(var(--accent-rgb));
+  border-radius: 0.35em;
+  color: rgb(var(--accent-rgb));
+  flex: 1;
+  font-family: eaves-xl-san-heavy;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vw);
+  gap: 1em;
+  padding: calc(50px + 5vh) calc(20px + 2vw);
+}
+
+.meHeader {
+  align-items: end;
+  display: flex;
+  font-size: calc(22px + 1vw);
+  gap: 0.5em;
+}
+
+.meProfilePhoto {
+  width: 5em;
+}
+
+.meHeading {
+  font-family: eaves-xl-mod-ultra;
+}
+
+.meTagline {
+  font-family: acumin-medium;
+  font-size: 0.9em;
+}
+
+.meLinks {
+  display: flex;
+  gap: max(10px, min(20px, 5vw));
+  height: max(50px, min(80px, 12vw));
+  width: max(100px, min(160px, 25vw));
+}
+
+.meLink {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.meLinkImg {
+  width: 100%;
+}
+
+.meResumeBtn {
+  border-radius: 1.2em;
+  display: inline-block;
+  font-family: eaves-xl-san-heavy;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.meSubsections {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5em;
+  margin-top: 4.5em;
+}
+
+.meSubheading {
+  display: inline-block;
+  font-family: monolisa-black;
+  font-size: 0.8em;
+  padding: 0.1em 1em;
+}
+
+.meSubheadingDecoration {
+  border-style: solid;
+  border-width: 0.6em 0.5em 0 0;
+  margin-bottom: 1em;
+  width: 0px;
+}
+
+.meToolboxSubsections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  padding: 0 1em 0 0.5em;
+}
+
+.meToolboxSubheading {
+  font-family: monolisa-thin;
+  font-size: 0.75em;
+  line-height: 0.1;
+  margin: 1em 0 2em 0;
+}
+
+.meToolboxSubheadingContent {
+  padding-right: 0.5em;
+}
+
+.meToolboxToolList {
+  display: grid;
+  font-size: calc(8px + 0.75vw);
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1em;
+}
+
+.meTool {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.meToolImg {
+  height: 3em;
+  width: 3em;
+}
+
+.meToolText {
+  font-family: acumin-extralight;
+}
+
+.meHobbies {
+  column-gap: 2%;
+  display: grid;
+  font-size: calc(8px + 0.75vw);
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-right: 2em;
+  row-gap: 2.5em;
+}
+
+.meHobby {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.meHobbyImg {
+  height: 4em;
+  width: 4em;
+}
+
+.meHobbyText {
+  font-family: acumin-extralight;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: acumin-extralight;
+  font-size: calc(12px + 1vw);
+  justify-content: center;
+  min-height: 10vh;
+}
+
+.footerLink {
+  border-radius: 0.5em;
+  font-family: monolisa-extralight;
+  font-size: 0.65em;
+  margin-top: 0.5em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+.targetOffset:target {
+  scroll-margin-top: calc(60px + 6.5vw);
+}

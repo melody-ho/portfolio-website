@@ -8,6 +8,7 @@ import DeskIllustration from "../DeskIllustration";
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
+import s from "./index.module.css";
 
 /// Component ///
 function Home() {
@@ -15,11 +16,11 @@ function Home() {
   const theme = useContext(ThemeContext);
 
   // initialize CSS module //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // render //
@@ -31,14 +32,17 @@ function Home() {
         </div>
       </div>
       <div className={s.topLayer}>
-        <p className={s.tagline}>
+        <p className={`${s.tagline} ${t.tagline}`}>
           <span className={s.taglineTertiary}>Hello</span>
           , my name is
           <br />
           <span className={s.taglinePrimary}>Melody Ho</span>
           .<br />
           I&apos;m a{" "}
-          <span className={s.taglineSecondary}>software engineer</span>.
+          <span className={`${s.taglineSecondary} ${t.taglineSecondary}`}>
+            software engineer
+          </span>
+          .
         </p>
       </div>
     </div>

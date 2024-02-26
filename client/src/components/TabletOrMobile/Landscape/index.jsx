@@ -20,6 +20,7 @@ import {
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
+import s from "./index.module.css";
 
 /// Constants ///
 const INFINITE_CONTENT = {
@@ -49,9 +50,9 @@ function Logo({ theme }) {
   return <img alt="website logo" src={`/images/logo/${theme}-mobile.svg`} />;
 }
 
-function ShowcaseCard({ content, s }) {
+function ShowcaseCard({ content, t }) {
   return (
-    <li className={s.showcaseContainer}>
+    <li className={`${s.showcaseContainer} ${t.showcaseContainer}`}>
       <img
         alt={content.imgAlt}
         className={s.showcaseImg}
@@ -84,14 +85,14 @@ function ShowcaseCard({ content, s }) {
 /// Public Components ///
 function Landscape({ fragmentId, setTheme, theme }) {
   // initialize states and refs //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
   const homeLink = useRef(null);
   const showcaseLink = useRef(null);
   const meLink = useRef(null);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // go to target indicated by fragment ID //
@@ -125,8 +126,8 @@ function Landscape({ fragmentId, setTheme, theme }) {
 
   // render //
   return (
-    <div className={s.body}>
-      <header className={s.header}>
+    <div className={`${s.body} ${t.body}`}>
+      <header className={`${s.header} ${t.header}`}>
         <div className={s.headerTop}>
           <a
             aria-label="return to top"
@@ -136,10 +137,14 @@ function Landscape({ fragmentId, setTheme, theme }) {
           >
             <Logo theme={theme} />
           </a>
-          <a className={s.textLink} href="/#showcase" ref={showcaseLink}>
+          <a
+            className={`${s.textLink} ${t.textLink}`}
+            href="/#showcase"
+            ref={showcaseLink}
+          >
             showcase
           </a>
-          <a className={s.textLink} href="/#me" ref={meLink}>
+          <a className={`${s.textLink} ${t.textLink}`} href="/#me" ref={meLink}>
             me
           </a>
         </div>
@@ -149,16 +154,19 @@ function Landscape({ fragmentId, setTheme, theme }) {
       </header>
       <div>
         <main>
-          <section className={s.home} id="home">
+          <section className={`${s.home} ${t.home}`} id="home">
             <div className={s.taglineWrapper}>
-              <p className={s.taglineBase}>
+              <p className={`${s.taglineBase} ${t.taglineBase}`}>
                 <span className={s.taglineTertiary}>Hello</span>
                 , my name is
                 <br />
                 <span className={s.taglinePrimary}>Melody Ho</span>
                 .<br />
                 I&apos;m a{" "}
-                <span className={s.taglineSecondary}>software engineer</span>.
+                <span className={`${s.taglineSecondary} ${t.taglineSecondary}`}>
+                  software engineer
+                </span>
+                .
               </p>
             </div>
             <div className={s.deskIllustration}>
@@ -168,18 +176,18 @@ function Landscape({ fragmentId, setTheme, theme }) {
               <Avatar />
             </div>
           </section>
-          <section className={s.showcase} id="showcase">
+          <section className={`${s.showcase} ${t.showcase}`} id="showcase">
             <ul className={s.showcaseCards}>
-              <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+              <ShowcaseCard content={INFINITE_CONTENT} t={t} />
               <ShowcaseCard
                 content={
                   theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
                 }
-                s={s}
+                t={t}
               />
             </ul>
           </section>
-          <section className={s.me} id="me">
+          <section className={`${s.me} ${t.me}`} id="me">
             <div className={s.meTopSections}>
               <header className={s.meHeader}>
                 <img
@@ -190,7 +198,10 @@ function Landscape({ fragmentId, setTheme, theme }) {
                 <h1 className={s.meHeading}>About Me</h1>
               </header>
               <section className={s.meResumeBtnContainer}>
-                <a className={s.meResumeBtn} href="/melody-ho.pdf">
+                <a
+                  className={`${s.meResumeBtn} ${t.meResumeBtn}`}
+                  href="/melody-ho.pdf"
+                >
                   resume.pdf
                 </a>
               </section>
@@ -216,13 +227,21 @@ function Landscape({ fragmentId, setTheme, theme }) {
             </section>
             <div className={s.meSubsections}>
               <section>
-                <h2 className={s.meSubheading}>toolbox</h2>
-                <div className={s.meSubheadingDecoration} />
+                <h2 className={`${s.meSubheading} ${t.meSubheading}`}>
+                  toolbox
+                </h2>
+                <div
+                  className={`${s.meSubheadingDecoration} ${t.meSubheadingDecoration}`}
+                />
                 <div className={s.meToolboxSubsections}>
                   {TOOLBOX_SUBSECTIONS.map((toolboxSubsection) => (
                     <section key={toolboxSubsection.title}>
-                      <h3 className={s.meToolboxSubheading}>
-                        <span className={s.meToolboxSubheadingContent}>
+                      <h3
+                        className={`${s.meToolboxSubheading} ${t.meToolboxSubheading}`}
+                      >
+                        <span
+                          className={`${s.meToolboxSubheadingContent} ${t.meToolboxSubheadingContent}`}
+                        >
                           {toolboxSubsection.title}
                         </span>
                       </h3>
@@ -243,8 +262,12 @@ function Landscape({ fragmentId, setTheme, theme }) {
                 </div>
               </section>
               <section>
-                <h2 className={s.meSubheading}>toy box</h2>
-                <div className={s.meSubheadingDecoration} />
+                <h2 className={`${s.meSubheading} ${t.meSubheading}`}>
+                  toy box
+                </h2>
+                <div
+                  className={`${s.meSubheadingDecoration} ${t.meSubheadingDecoration}`}
+                />
                 <ul className={s.meHobbies}>
                   {HOBBIES.map((hobby) => (
                     <li className={s.meHobby} key={hobby.text}>
@@ -261,10 +284,10 @@ function Landscape({ fragmentId, setTheme, theme }) {
             </div>
           </section>
         </main>
-        <footer className={s.footer}>
+        <footer className={`${s.footer} ${t.footer}`}>
           <p>© 2024 Melody Ho. All rights reserved.</p>
           <a
-            className={s.footerLink}
+            className={`${s.footerLink} ${t.footerLink}`}
             href="//github.com/melody-ho/portfolio-website"
           >
             See on GitHub

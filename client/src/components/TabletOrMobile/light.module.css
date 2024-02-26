@@ -1,49 +1,17 @@
 .notFound {
-  align-items: center;
   background-color: rgb(var(--light-primary-rgb));
-  display: flex;
-  flex-direction: column;
-  gap: 10vh;
-  justify-content: center;
-  min-height: 100vh;
-  min-width: 250px;
 }
 
 .notFoundMessage {
   color: rgb(var(--dark-primary-rgb));
-  font-family: acumin-regular;
-}
-
-.notFoundMessageLarge,
-.notFoundMessageSmall {
-  display: block;
 }
 
 .notFoundMessageLarge {
   color: rgb(var(--dark-secondary-rgb));
-  font-family: eaves-xl-san-ultra;
-  font-size: 6em;
-}
-
-.notFoundMessageSmall {
-  margin: 1em 0 0 0.5em;
 }
 
 .notFoundLink {
   background-color: rgb(var(--light-secondary-rgb));
   border: rgb(var(--dark-primary-rgb)) 0.2em solid;
-  border-radius: 2em;
   color: rgb(var(--dark-primary-rgb));
-  font-family: eaves-xl-mod-ultra;
-  font-size: 1.5em;
-  padding: 1em;
-  text-decoration: none;
-}
-
-.notFound.landscape {
-  font-size: calc(12px + 2vh);
-}
-
-.notFound.portrait {
-  font-size: calc(12px + 1.5vw);
 }

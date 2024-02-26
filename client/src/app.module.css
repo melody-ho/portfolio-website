@@ -21,18 +21,6 @@
   width: 100%;
 }
 
-.backgroundLeft,
-.headerBackgroundLeft,
-.footerBackgroundLeft {
-  background-color: rgb(var(--medium-secondary-rgb));
-}
-
-.backgroundRight,
-.headerBackgroundRight,
-.footerBackgroundRight {
-  background-color: rgb(var(--light-primary-rgb));
-}
-
 .header,
 .footer {
   width: 100%;
@@ -68,7 +56,6 @@
 
 .headerLogoLink {
   align-items: flex-end;
-  color: rgb(var(--light-primary-rgb));
   display: flex;
   font-size: calc(26px + 2vw);
   gap: 0.25em;
@@ -92,7 +79,6 @@
 }
 
 .headerLink {
-  color: rgb(var(--dark-primary-rgb));
   font-family: eaves-xl-san-ultra;
   position: relative;
   text-decoration: none;
@@ -105,11 +91,6 @@
   left: -0.25em;
   position: absolute;
   width: 0.5em;
-}
-
-.headerActiveLink::before {
-  border-bottom: rgba(var(--dark-primary-rgb), 0.8) solid 0.125em;
-  border-left: rgba(var(--dark-primary-rgb), 0.8) solid 0.125em;
 }
 
 .headerThemeToggle {
@@ -160,8 +141,6 @@
 .footerTextLink {
   background-color: rgb(var(--dark-secondary-rgb));
   border-radius: 0.2em;
-  color: rgb(var(--light-secondary-rgb));
-  font-family: monolisa-thin;
   font-size: 0.7em;
   padding: 0.25em 0.5em;
   text-decoration: none;

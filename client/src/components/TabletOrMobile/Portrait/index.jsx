@@ -20,6 +20,7 @@ import {
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
+import s from "./index.module.css";
 
 /// Constants ///
 const INFINITE_CONTENT = {
@@ -49,9 +50,9 @@ function Logo({ theme }) {
   return <img alt="website logo" src={`/images/logo/${theme}-mobile.svg`} />;
 }
 
-function ShowcaseCard({ content, s }) {
+function ShowcaseCard({ content, t }) {
   return (
-    <li className={s.showcaseContainer}>
+    <li className={`${s.showcaseContainer} ${t.showcaseContainer}`}>
       <p className={s.showcaseLabel}>showcase</p>
       <h1 className={s.showcaseTitle}>{content.title}</h1>
       <img
@@ -82,14 +83,14 @@ function ShowcaseCard({ content, s }) {
 /// Public Components ///
 function Portrait({ fragmentId, setTheme, theme }) {
   // initialize states and refs //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
   const homeLink = useRef(null);
   const showcaseLink = useRef(null);
   const meLink = useRef(null);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // go to target indicated by fragment ID //
@@ -123,18 +124,22 @@ function Portrait({ fragmentId, setTheme, theme }) {
 
   // render //
   return (
-    <div className={s.body}>
-      <header className={s.header}>
+    <div className={`${s.body} ${t.body}`}>
+      <header className={`${s.header} ${t.header}`}>
         <div className={s.headerLeft}>
           <a aria-label="return to top" href="/#home" ref={homeLink}>
             <Logo theme={theme} />
           </a>
         </div>
         <div className={s.headerRight}>
-          <a className={s.link} href="/#showcase" ref={showcaseLink}>
+          <a
+            className={`${s.link} ${t.link}`}
+            href="/#showcase"
+            ref={showcaseLink}
+          >
             showcase
           </a>
-          <a className={s.link} href="/#me" ref={meLink}>
+          <a className={`${s.link} ${t.link}`} href="/#me" ref={meLink}>
             me
           </a>
           <div className={s.themeToggle}>
@@ -143,16 +148,19 @@ function Portrait({ fragmentId, setTheme, theme }) {
         </div>
       </header>
       <main>
-        <section className={`${s.home} ${s.targetOffset}`} id="home">
+        <section className={`${s.home} ${t.home} ${s.targetOffset}`} id="home">
           <div className={s.taglineWrapper}>
-            <p className={s.taglineBase}>
+            <p className={`${s.taglineBase} ${t.taglineBase}`}>
               <span className={s.taglineTertiary}>Hello</span>
               , my name is
               <br />
               <span className={s.taglinePrimary}>Melody Ho</span>
               .<br />
               I&apos;m a{" "}
-              <span className={s.taglineSecondary}>software engineer</span>.
+              <span className={`${s.taglineSecondary} ${t.taglineSecondary}`}>
+                software engineer
+              </span>
+              .
             </p>
           </div>
           <div className={s.deskIllustration}>
@@ -162,18 +170,21 @@ function Portrait({ fragmentId, setTheme, theme }) {
             <Avatar />
           </div>
         </section>
-        <section className={`${s.showcase} ${s.targetOffset}`} id="showcase">
+        <section
+          className={`${s.showcase} ${t.showcase} ${s.targetOffset}`}
+          id="showcase"
+        >
           <ul className={s.showcaseCards}>
-            <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+            <ShowcaseCard content={INFINITE_CONTENT} t={t} />
             <ShowcaseCard
               content={
                 theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
               }
-              s={s}
+              t={t}
             />
           </ul>
         </section>
-        <section className={`${s.me} ${s.targetOffset}`} id="me">
+        <section className={`${s.me} ${t.me} ${s.targetOffset}`} id="me">
           <header className={s.meHeader}>
             <img
               alt="Melody Ho"
@@ -202,19 +213,28 @@ function Portrait({ fragmentId, setTheme, theme }) {
             </a>
           </section>
           <section>
-            <a className={s.meResumeBtn} href="/melody-ho.pdf">
+            <a
+              className={`${s.meResumeBtn} ${t.meResumeBtn}`}
+              href="/melody-ho.pdf"
+            >
               resume.pdf
             </a>
           </section>
           <div className={s.meSubsections}>
             <section>
-              <h2 className={s.meSubheading}>toolbox</h2>
-              <div className={s.meSubheadingDecoration} />
+              <h2 className={`${s.meSubheading} ${t.meSubheading}`}>toolbox</h2>
+              <div
+                className={`${s.meSubheadingDecoration} ${t.meSubheadingDecoration}`}
+              />
               <div className={s.meToolboxSubsections}>
                 {TOOLBOX_SUBSECTIONS.map((toolboxSubsection) => (
                   <section key={toolboxSubsection.title}>
-                    <h3 className={s.meToolboxSubheading}>
-                      <span className={s.meToolboxSubheadingContent}>
+                    <h3
+                      className={`${s.meToolboxSubheading} ${t.meToolboxSubheading}`}
+                    >
+                      <span
+                        className={`${s.meToolboxSubheadingContent} ${t.meToolboxSubheadingContent}`}
+                      >
                         {toolboxSubsection.title}
                       </span>
                     </h3>
@@ -235,8 +255,10 @@ function Portrait({ fragmentId, setTheme, theme }) {
               </div>
             </section>
             <section>
-              <h2 className={s.meSubheading}>toy box</h2>
-              <div className={s.meSubheadingDecoration} />
+              <h2 className={`${s.meSubheading} ${t.meSubheading}`}>toy box</h2>
+              <div
+                className={`${s.meSubheadingDecoration} ${t.meSubheadingDecoration}`}
+              />
               <ul className={s.meHobbies}>
                 {HOBBIES.map((hobby) => (
                   <li className={s.meHobby} key={hobby.text}>
@@ -253,10 +275,10 @@ function Portrait({ fragmentId, setTheme, theme }) {
           </div>
         </section>
       </main>
-      <footer className={s.footer}>
+      <footer className={`${s.footer} ${t.footer}`}>
         <p>© 2024 Melody Ho. All rights reserved.</p>
         <a
-          className={s.footerLink}
+          className={`${s.footerLink} ${t.footerLink}`}
           href="//github.com/melody-ho/portfolio-website"
         >
           See on GitHub

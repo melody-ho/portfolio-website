@@ -1,0 +1,18 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 1.5vw);
+  justify-content: center;
+  margin: 0 11%;
+  min-height: 65vh;
+}
+
+.messageLarge {
+  color: rgb(var(--accent-rgb));
+  font-family: eaves-xl-mod-ultra;
+  font-size: 10em;
+}
+
+.messageSmall {
+  margin-left: 1em;
+}

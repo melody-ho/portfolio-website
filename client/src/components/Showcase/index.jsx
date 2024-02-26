@@ -8,6 +8,7 @@ import { INFINITE, JOURN } from "../../content";
 // assets
 import darkTheme from "./dark.module.css";
 import lightTheme from "./light.module.css";
+import s from "./index.module.css";
 
 /// Constants ///
 const INFINITE_CONTENT = {
@@ -29,9 +30,12 @@ const JOURN_CONTENT_DARK = {
 };
 
 /// Private Components ///
-function ShowcaseCard({ content, s }) {
+function ShowcaseCard({ content, t }) {
   return (
-    <li className={s.showcaseContainer} id={content.id}>
+    <li
+      className={`${s.showcaseContainer} ${t.showcaseContainer}`}
+      id={content.id}
+    >
       <img
         alt={content.imgAlt}
         className={s.showcaseImg}
@@ -67,11 +71,11 @@ function Showcase() {
   const theme = useContext(ThemeContext);
 
   // initialize CSS module //
-  const [s, setS] = useState(theme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
 
   // change CSS module when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
   }, [theme]);
 
   // render //
@@ -79,12 +83,12 @@ function Showcase() {
     <div className={s.component}>
       <section>
         <ul className={s.showcaseCards}>
-          <ShowcaseCard content={INFINITE_CONTENT} s={s} />
+          <ShowcaseCard content={INFINITE_CONTENT} t={t} />
           <ShowcaseCard
             content={
               theme === "light" ? JOURN_CONTENT_LIGHT : JOURN_CONTENT_DARK
             }
-            s={s}
+            t={t}
           />
         </ul>
       </section>

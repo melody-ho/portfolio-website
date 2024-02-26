@@ -13,11 +13,12 @@ import ThemeToggle from "./components/ThemeToggle";
 // variables
 import routes from "./routes";
 // assets
-import darkTheme from "./dark.module.css";
+import darkTheme from "./appDark.module.css";
 import { DarkBlinkingLogo, LightBlinkingLogo } from "./components/BlinkingLogo";
-import lightTheme from "./light.module.css";
+import lightTheme from "./appLight.module.css";
 import linkTransition from "./linkTransition.module.css";
 import pageTransition from "./pageTransition.module.css";
+import s from "./app.module.css";
 
 /// Constants ///
 const PAGE_TRANSITION_DURATION = 1500;
@@ -39,7 +40,7 @@ function App() {
     : "dark";
 
   // initialize states //
-  const [s, setS] = useState(initialTheme === "light" ? lightTheme : darkTheme);
+  const [t, setT] = useState(initialTheme === "light" ? lightTheme : darkTheme);
   const [theme, setTheme] = useState(initialTheme);
 
   // initialize hook for responsive layout //
@@ -56,7 +57,7 @@ function App() {
 
   // change CSS module and body background color when theme is changed //
   useEffect(() => {
-    setS(theme === "light" ? lightTheme : darkTheme);
+    setT(theme === "light" ? lightTheme : darkTheme);
     document.body.style = `background-color: rgb(var(--${theme}-primary-rgb))`;
   }, [theme]);
 
@@ -79,16 +80,23 @@ function App() {
     return (
       <div className={s.app}>
         <div className={s.background}>
-          <div className={s.backgroundLeft} />
-          <div className={s.backgroundRight} />
+          <div className={`${s.backgroundLeft} ${t.leftBackgroundColor}`} />
+          <div className={`${s.backgroundRight} ${t.rightBackgroundColor}`} />
         </div>
         <header className={s.header}>
           <div className={s.headerBackground}>
-            <div className={s.headerBackgroundLeft} />
-            <div className={s.headerBackgroundRight} />
+            <div
+              className={`${s.headerBackgroundLeft} ${t.leftBackgroundColor}`}
+            />
+            <div
+              className={`${s.headerBackgroundRight} ${t.rightBackgroundColor}`}
+            />
           </div>
           <div className={s.headerContent}>
-            <NavLink className={s.headerLogoLink} to="/">
+            <NavLink
+              className={`${s.headerLogoLink} ${t.headerLogoLink}`}
+              to="/"
+            >
               <div className={s.headerLogo}>
                 <Logo theme={theme} />
               </div>
@@ -98,8 +106,8 @@ function App() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
-                    : s.headerLink
+                    ? `${s.headerLink} ${t.headerLink} ${s.headerActiveLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
+                    : `${s.headerLink} ${t.headerLink}`
                 }
                 to="/showcase"
               >
@@ -108,8 +116,8 @@ function App() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? `${s.headerLink} ${s.headerActiveLink} ${linkTransition.slideIn}`
-                    : s.headerLink
+                    ? `${s.headerLink} ${t.headerLink} ${s.headerActiveLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
+                    : `${s.headerLink} ${t.headerLink}`
                 }
                 to="/me"
               >
@@ -150,14 +158,18 @@ function App() {
         </main>
         <footer className={s.footer}>
           <div className={s.footerBackground}>
-            <div className={s.footerBackgroundLeft} />
-            <div className={s.footerBackgroundRight} />
+            <div
+              className={`${s.footerBackgroundLeft} ${t.leftBackgroundColor}`}
+            />
+            <div
+              className={`${s.footerBackgroundRight} ${t.rightBackgroundColor}`}
+            />
           </div>
           <div className={s.footerContent}>
             <div className={s.footerLeft}>
               <p>© 2024 Melody Ho. All rights reserved.</p>
               <a
-                className={s.footerTextLink}
+                className={`${s.footerTextLink} ${t.footerTextLink}`}
                 href="//github.com/melody-ho/portfolio-website"
               >
                 See on GitHub
