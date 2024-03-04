@@ -81,8 +81,10 @@ function ShowcaseCard({ content, t }) {
 }
 
 /// Public Components ///
-function Portrait({ fragmentId, setTheme, theme }) {
+function Portrait({ fragmentId, handleLoaded, setTheme, theme }) {
   // initialize states and refs //
+  const [avatarReady, setAvatarReady] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false);
   const [t, setT] = useState(theme === "light" ? lightTheme : darkTheme);
   const homeLink = useRef(null);
   const showcaseLink = useRef(null);
@@ -121,6 +123,25 @@ function Portrait({ fragmentId, setTheme, theme }) {
       }
     }
   }, [fragmentId]);
+
+  // hide loader //
+  useEffect(() => {
+    if (avatarReady && pageLoaded) {
+      handleLoaded();
+    }
+  }, [avatarReady, handleLoaded, pageLoaded]);
+  useEffect(() => {
+    function handlePageLoaded() {
+      setPageLoaded(true);
+    }
+
+    if (document.readyState === "complete") {
+      setPageLoaded(true);
+      return undefined;
+    }
+    window.addEventListener("load", handlePageLoaded);
+    return () => window.removeEventListener("load", handlePageLoaded);
+  }, []);
 
   // render //
   return (
@@ -167,7 +188,11 @@ function Portrait({ fragmentId, setTheme, theme }) {
             <DeskIllustration theme={theme} />
           </div>
           <div className={s.avatar}>
-            <Avatar />
+            <Avatar
+              handleReady={() => {
+                setAvatarReady(true);
+              }}
+            />
           </div>
         </section>
         <section

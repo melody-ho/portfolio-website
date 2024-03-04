@@ -10,10 +10,17 @@ const WAVE_FRAMES = [0, 48];
 const WAVE_LOOP_FRAMES = [0, 96];
 
 /// Component ///
-function Avatar() {
+function Avatar({ handleReady }) {
   // initialize refs //
   const avatarInteraction = useRef(false);
   const avatarRef = useRef(null);
+
+  // report ready state //
+  useEffect(() => {
+    if (avatarRef.current) {
+      avatarRef.current.addEventListener("ready", handleReady);
+    }
+  }, [avatarRef, handleReady]);
 
   // configure animation interactivity after first wave has played //
   useEffect(() => {

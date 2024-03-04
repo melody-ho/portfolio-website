@@ -40,6 +40,9 @@ function App() {
     : "dark";
 
   // initialize states //
+  const [avatarReady, setAvatarReady] = useState(false);
+  const [laptopLoaded, setLaptopLoaded] = useState(false);
+  const [mobileLoaded, setMobileLoaded] = useState(false);
   const [t, setT] = useState(initialTheme === "light" ? lightTheme : darkTheme);
   const [theme, setTheme] = useState(initialTheme);
 
@@ -75,10 +78,53 @@ function App() {
     }
   }, [isDesktopOrLaptop, navigate]);
 
+  // show loader //
+  useEffect(() => {
+    const loader = document.getElementById("loader");
+    if (isDesktopOrLaptop && (!avatarReady || !laptopLoaded)) {
+      loader.classList.replace("loader--hide", "loader--show");
+    } else if (!isDesktopOrLaptop && !mobileLoaded) {
+      loader.classList.replace("loader--hide", "loader--show");
+    }
+  }, [avatarReady, isDesktopOrLaptop, laptopLoaded, mobileLoaded]);
+  // hide loader //
+  useEffect(() => {
+    const loader = document.getElementById("loader");
+    if (
+      (isDesktopOrLaptop && avatarReady && laptopLoaded) ||
+      (!isDesktopOrLaptop && mobileLoaded)
+    ) {
+      loader.classList.replace("loader--show", "loader--hide");
+    }
+  }, [avatarReady, isDesktopOrLaptop, laptopLoaded, mobileLoaded]);
+  useEffect(() => {
+    function handlePageLoaded() {
+      setLaptopLoaded(true);
+    }
+
+    if (document.readyState === "complete") {
+      setLaptopLoaded(true);
+      return undefined;
+    }
+    window.addEventListener("load", handlePageLoaded);
+    return () => window.removeEventListener("load", handlePageLoaded);
+  }, []);
+
   // render
   if (isDesktopOrLaptop) {
     return (
       <div className={s.app}>
+        <div className={s.preloadFonts}>
+          <span className={s.acuminExtralight} />
+          <span className={s.acuminSemibold} />
+          <span className={s.eavesXlModRegular} />
+          <span className={s.eavesXlModUltra} />
+          <span className={s.eavesXlSanHeavy} />
+          <span className={s.monolisaBlack} />
+          <span className={s.monolisaBold} />
+          <span className={s.monolisaLight} />
+          <span className={s.monolisaThin} />
+        </div>
         <div className={s.background}>
           <div className={`${s.backgroundLeft} ${t.leftBackgroundColor}`} />
           <div className={`${s.backgroundRight} ${t.rightBackgroundColor}`} />
@@ -153,7 +199,11 @@ function App() {
             </CSSTransition>
           </TransitionGroup>
           <div className={s.avatar}>
-            <Avatar />
+            <Avatar
+              handleReady={() => {
+                setAvatarReady(true);
+              }}
+            />
           </div>
         </main>
         <footer className={s.footer}>
@@ -194,7 +244,13 @@ function App() {
       </div>
     );
   }
-  return <TabletOrMobile setTheme={setTheme} theme={theme} />;
+  return (
+    <TabletOrMobile
+      setTheme={setTheme}
+      theme={theme}
+      updateLoadState={setMobileLoaded}
+    />
+  );
 }
 
 export default App;

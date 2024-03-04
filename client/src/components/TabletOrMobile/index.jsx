@@ -14,7 +14,7 @@ import s from "./index.module.css";
 const validSubpaths = ["", "showcase", "me"];
 
 /// Component ///
-function TabletOrMobile({ setTheme, theme }) {
+function TabletOrMobile({ setTheme, theme, updateLoadState }) {
   // initialize hook for responsive layout //
   const isLandscape = useMediaQuery({ minAspectRatio: "16/9" });
 
@@ -28,6 +28,11 @@ function TabletOrMobile({ setTheme, theme }) {
 
   // get subpath //
   const subpath = window.location.pathname.split("/")[1];
+
+  // reset load state when layout changes //
+  useEffect(() => {
+    updateLoadState(false);
+  }, [isLandscape, updateLoadState]);
 
   // render - invalid paths //
   if (!validSubpaths.includes(subpath)) {
@@ -56,9 +61,27 @@ function TabletOrMobile({ setTheme, theme }) {
 
   // render - main //
   if (isLandscape) {
-    return <Landscape fragmentId={subpath} setTheme={setTheme} theme={theme} />;
+    return (
+      <Landscape
+        fragmentId={subpath}
+        handleLoaded={() => {
+          updateLoadState(true);
+        }}
+        setTheme={setTheme}
+        theme={theme}
+      />
+    );
   }
-  return <Portrait fragmentId={subpath} setTheme={setTheme} theme={theme} />;
+  return (
+    <Portrait
+      fragmentId={subpath}
+      handleLoaded={() => {
+        updateLoadState(true);
+      }}
+      setTheme={setTheme}
+      theme={theme}
+    />
+  );
 }
 
 export default TabletOrMobile;
