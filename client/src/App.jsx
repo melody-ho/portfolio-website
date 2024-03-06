@@ -126,17 +126,13 @@ function App() {
           <span className={s.monolisaThin} />
         </div>
         <div className={s.background}>
-          <div className={`${s.backgroundLeft} ${t.leftBackgroundColor}`} />
-          <div className={`${s.backgroundRight} ${t.rightBackgroundColor}`} />
+          <div className={t.leftBackgroundColor} />
+          <div className={t.rightBackgroundColor} />
         </div>
         <header className={s.header}>
           <div className={s.headerBackground}>
-            <div
-              className={`${s.headerBackgroundLeft} ${t.leftBackgroundColor}`}
-            />
-            <div
-              className={`${s.headerBackgroundRight} ${t.rightBackgroundColor}`}
-            />
+            <div className={t.leftBackgroundColor} />
+            <div className={t.rightBackgroundColor} />
           </div>
           <div className={s.headerContent}>
             <NavLink
@@ -152,7 +148,7 @@ function App() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? `${s.headerLink} ${t.headerLink} ${s.headerActiveLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
+                    ? `${s.headerLink} ${t.headerLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
                     : `${s.headerLink} ${t.headerLink}`
                 }
                 to="/showcase"
@@ -162,7 +158,7 @@ function App() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? `${s.headerLink} ${t.headerLink} ${s.headerActiveLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
+                    ? `${s.headerLink} ${t.headerLink} ${t.headerActiveLink} ${linkTransition.slideIn}`
                     : `${s.headerLink} ${t.headerLink}`
                 }
                 to="/me"
@@ -208,12 +204,8 @@ function App() {
         </main>
         <footer className={s.footer}>
           <div className={s.footerBackground}>
-            <div
-              className={`${s.footerBackgroundLeft} ${t.leftBackgroundColor}`}
-            />
-            <div
-              className={`${s.footerBackgroundRight} ${t.rightBackgroundColor}`}
-            />
+            <div className={t.leftBackgroundColor} />
+            <div className={t.rightBackgroundColor} />
           </div>
           <div className={s.footerContent}>
             <div className={s.footerLeft}>
