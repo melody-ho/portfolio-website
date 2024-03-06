@@ -1,10 +1,36 @@
+/// Imports ///
+// svgs
+import AfterEffectsIcon from "./svgs/AfterEffectsIcon";
+import CssIcon from "./svgs/CssIcon";
+import ExpresIcon from "./svgs/ExpressIcon";
+import FigmaIcon from "./svgs/FigmaIcon";
+import HtmlIcon from "./svgs/HtmlIcon";
+import IllustratorIcon from "./svgs/IllustratorIcon";
+import JavaScriptIcon from "./svgs/JavaScriptIcon";
+import JestIcon from "./svgs/JestIcon";
+import LiveIcon from "./svgs/LiveIcon";
+import MongoDbIcon from "./svgs/MongoDbIcon";
+import MoviesIcon from "./svgs/MoviesIcon";
+import MySqlIcon from "./svgs/MySqlIcon";
+import NextDotJsIcon from "./svgs/NextDotJsIcon";
+import NodeDotJsIcon from "./svgs/NodeDotJsIcon";
+import PhotoshopIcon from "./svgs/PhotoshopIcon";
+import ReactIcon from "./svgs/ReactIcon";
+import SequelizeIcon from "./svgs/SequelizeIcon";
+import SingingIcon from "./svgs/SingingIcon";
+import SpinIcon from "./svgs/SpinIcon";
+import TravelIcon from "./svgs/TravelIcon";
+import XdIcon from "./svgs/XdIcon";
+import YogaIcon from "./svgs/YogaIcon";
+
+/// Public ///
 const HOBBIES = [
-  { text: "Singing", img: "singing" },
-  { text: "Live Streaming", img: "live" },
-  { text: "Movies", img: "movies" },
-  { text: "Travel", img: "travel" },
-  { text: "Spin", img: "spin" },
-  { text: "Yoga", img: "yoga" },
+  { text: "Singing", icon: <SingingIcon /> },
+  { text: "Live Streaming", icon: <LiveIcon /> },
+  { text: "Movies", icon: <MoviesIcon /> },
+  { text: "Travel", icon: <TravelIcon /> },
+  { text: "Spin", icon: <SpinIcon /> },
+  { text: "Yoga", icon: <YogaIcon /> },
 ];
 
 const INFINITE = {
@@ -34,38 +60,38 @@ const TOOLBOX_SUBSECTIONS = [
   {
     title: "front end",
     tools: [
-      { name: "HTML", img: "html" },
-      { name: "CSS", img: "css" },
-      { name: "JavaScript", img: "javascript" },
-      { name: "React", img: "react" },
+      { name: "HTML", icon: <HtmlIcon /> },
+      { name: "CSS", icon: <CssIcon /> },
+      { name: "JavaScript", icon: <JavaScriptIcon /> },
+      { name: "React", icon: <ReactIcon /> },
     ],
   },
   {
     title: "back end",
     tools: [
-      { name: "Node.js", img: "nodedotjs" },
-      { name: "Express", img: "express" },
-      { name: "Sequelize", img: "sequelize" },
-      { name: "MySQL", img: "mysql" },
-      { name: "MongoDB", img: "mongodb" },
+      { name: "Node.js", icon: <NodeDotJsIcon /> },
+      { name: "Express", icon: <ExpresIcon /> },
+      { name: "Sequelize", icon: <SequelizeIcon /> },
+      { name: "MySQL", icon: <MySqlIcon /> },
+      { name: "MongoDB", icon: <MongoDbIcon /> },
     ],
   },
   {
     title: "full stack",
-    tools: [{ name: "Next.js", img: "nextdotjs" }],
+    tools: [{ name: "Next.js", icon: <NextDotJsIcon /> }],
   },
   {
     title: "testing",
-    tools: [{ name: "Jest", img: "jest" }],
+    tools: [{ name: "Jest", icon: <JestIcon /> }],
   },
   {
     title: "design",
     tools: [
-      { name: "Figma", img: "figma" },
-      { name: "XD", img: "xd" },
-      { name: "Illustrator", img: "illustrator" },
-      { name: "After Effects", img: "after-effects" },
-      { name: "Photoshop", img: "photoshop" },
+      { name: "Figma", icon: <FigmaIcon /> },
+      { name: "XD", icon: <XdIcon /> },
+      { name: "Illustrator", icon: <IllustratorIcon /> },
+      { name: "After Effects", icon: <AfterEffectsIcon /> },
+      { name: "Photoshop", icon: <PhotoshopIcon /> },
     ],
   },
 ];

@@ -156,6 +156,10 @@
   width: 2.2em;
 }
 
+.footerIconLinkIcon {
+  width: 100%;
+}
+
 /* preload fonts used for laptop/desktop layout */
 .preLoadFonts {
   opacity: 0;

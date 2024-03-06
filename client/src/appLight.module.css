@@ -23,3 +23,7 @@
   color: rgb(var(--light-secondary-rgb));
   font-family: monolisa-thin;
 }
+
+.footerIconLinkIcon {
+  color: rgb(var(--dark-secondary-rgb));
+}

@@ -3,6 +3,8 @@
 import { useContext, useEffect, useState } from "react";
 // contexts
 import ThemeContext from "../../ThemeContext";
+// components
+import ProfilePhoto from "../ProfilePhoto";
 // variables
 import { HOBBIES, ME, TOOLBOX_SUBSECTIONS } from "../../content";
 // assets
@@ -32,11 +34,9 @@ function Me() {
           className={`${s.headerBackground} ${t.headerBackground} ${pageTransition.meHeaderBackground}`}
         />
         <header className={s.header}>
-          <img
-            alt="Melody Ho"
-            className={s.profilePhoto}
-            src={`/images/profile-picture/${theme}-laptop.png`}
-          />
+          <div className={s.profilePhoto}>
+            <ProfilePhoto device="laptop" theme={theme} />
+          </div>
           <h1 className={s.mainHeading}>About Me</h1>
         </header>
         <div
@@ -61,11 +61,7 @@ function Me() {
                     <ul className={s.toolboxToolList}>
                       {toolboxSubsection.tools.map((tool) => (
                         <li className={s.tool} key={tool.name}>
-                          <img
-                            alt={tool.name}
-                            className={s.toolImg}
-                            src={`/images/${tool.img}/${theme}-laptop.svg`}
-                          />
+                          <div className={s.toolIcon}>{tool.icon}</div>
                           <p className={s.toolText}>{tool.name}</p>
                         </li>
                       ))}
@@ -80,11 +76,7 @@ function Me() {
               <ul className={s.hobbies}>
                 {HOBBIES.map((hobby) => (
                   <li className={s.hobby} key={hobby.text}>
-                    <img
-                      alt={hobby.text}
-                      className={s.hobbyImg}
-                      src={`/images/${hobby.img}/${theme}-laptop.svg`}
-                    />
+                    <div className={s.hobbyIcon}>{hobby.icon}</div>
                     <p className={s.hobbyText}>{hobby.text}</p>
                   </li>
                 ))}

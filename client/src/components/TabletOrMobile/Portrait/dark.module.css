@@ -41,6 +41,12 @@
   color: rgb(var(--light-primary-rgb));
 }
 
+.meLink,
+.meToolIcon,
+.meHobbyIcon {
+  color: rgb(var(--light-secondary-rgb));
+}
+
 .meSubheading {
   background-color: rgb(var(--light-primary-rgb));
   color: rgb(var(--dark-primary-rgb));

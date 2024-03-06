@@ -1,0 +1,13 @@
+.component {
+  position: relative;
+}
+
+.staticLogoShow,
+.staticLogoHide {
+  position: absolute;
+  top: 0;
+}
+
+.staticLogoHide {
+  display: none;
+}

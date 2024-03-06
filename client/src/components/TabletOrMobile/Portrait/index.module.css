@@ -178,6 +178,7 @@
 }
 
 .meProfilePhoto {
+  height: 5em;
   width: 5em;
 }
 
@@ -203,7 +204,7 @@
   width: 100%;
 }
 
-.meLinkImg {
+.meLinkIcon {
   width: 100%;
 }
 
@@ -269,7 +270,7 @@
   gap: 1em;
 }
 
-.meToolImg {
+.meToolIcon {
   height: 3em;
   width: 3em;
 }
@@ -294,7 +295,7 @@
   gap: 1em;
 }
 
-.meHobbyImg {
+.meHobbyIcon {
   height: 4em;
   width: 4em;
 }

@@ -7,6 +7,7 @@
   border-right: solid 0.2em rgb(var(--light-primary-rgb));
 }
 
+.logoLink,
 .textLink {
   color: rgb(var(--light-primary-rgb));
 }
@@ -40,6 +41,12 @@
   background-color: rgb(247, 173, 25);
   border: rgb(var(--light-primary-rgb)) solid 0.2em;
   color: rgb(var(--light-primary-rgb));
+}
+
+.meLink,
+.meToolIcon,
+.meHobbyIcon {
+  color: rgb(var(--light-secondary-rgb));
 }
 
 .meSubheading {

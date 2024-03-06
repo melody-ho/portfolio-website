@@ -1,0 +1,42 @@
+.component {
+  position: relative;
+}
+
+.background,
+.border,
+.photo {
+  position: absolute;
+  width: 100%;
+}
+
+.laptop.light > .background {
+  color: rgb(var(--light-secondary-rgb));
+}
+
+.laptop.dark > .background {
+  color: rgb(var(--medium-secondary-rgb));
+}
+
+.mobile.light > .background {
+  color: rgb(var(--light-secondary-rgb));
+}
+
+.mobile.dark > .background {
+  color: rgb(var(--medium-secondary-rgb));
+}
+
+.laptop.light > .border {
+  color: rgb(var(--light-primary-rgb));
+}
+
+.laptop.dark > .border {
+  color: rgb(var(--light-primary-rgb));
+}
+
+.mobile.light > .border {
+  color: rgb(var(--dark-primary-rgb));
+}
+
+.mobile.dark > .border {
+  color: rgb(var(--light-primary-rgb));
+}

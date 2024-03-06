@@ -1,70 +1,113 @@
 /// Imports ///
-// external
-import { create } from "@lottiefiles/lottie-interactivity";
-import * as LottiePlayer from "@lottiefiles/lottie-player";
-import { useEffect, useRef } from "react";
 // assets
 import s from "./index.module.css";
 
-/// Constants ///
-const DARK_LOOP_FRAMES = [49, 50];
-const LIGHT_LOOP_FRAMES = [0, 1];
-const TURN_ON_FRAMES = [0, 50];
-
 /// Component ///
 function DeskIllustration({ theme }) {
-  // initialize refs //
-  const animatedLightInteraction = useRef(null);
-  const animatedLightRef = useRef(null);
-
-  // configure animation chain //
-  useEffect(() => {
-    animatedLightRef.current.addEventListener("load", () => {
-      if (animatedLightInteraction.current === null) {
-        animatedLightInteraction.current = create({
-          player: "#light",
-          mode: "chain",
-          actions: [
-            { state: "loop", frames: LIGHT_LOOP_FRAMES },
-            {
-              state: "autoplay",
-              frames: TURN_ON_FRAMES,
-              transition: "onComplete",
-            },
-            { state: "loop", frames: DARK_LOOP_FRAMES },
-          ],
-        });
-        if (theme === "dark") {
-          animatedLightInteraction.current.jumpToInteraction(1);
-        }
-      }
-    });
-  }, [theme]);
-
-  // toggle animation frames when theme is changed //
-  useEffect(() => {
-    if (animatedLightInteraction.current !== null) {
-      if (theme === "light") {
-        animatedLightInteraction.current.jumpToInteraction(0);
-      } else {
-        animatedLightInteraction.current.jumpToInteraction(1);
-      }
-    }
-  }, [theme]);
-
-  // render //
   return (
     <>
-      <lottie-player
-        id="light"
-        ref={animatedLightRef}
-        src="/animations/ceiling-light.json"
-      />
-      <img
-        alt="illustration of desk with computer"
-        className={s.lowerLayer}
-        src="/images/desk.svg"
-      />
+      <svg className={s.layer} role="img" viewBox="0 0 1500 1000">
+        <title>Illustration of Desk with Computer</title>
+        <rect
+          x="377.27"
+          y="876.58"
+          width="620.01"
+          height="27.42"
+          rx="9.89"
+          ry="9.89"
+          fill="#534741"
+        />
+        <polygon
+          points="734.6 871.31 666.06 871.31 676.6 817.54 724.05 817.54 734.6 871.31"
+          fill="#F2F2F2"
+        />
+        <path
+          d="M918.07,788.01v25.88c0,13.08-10.6,23.68-23.68,23.68h-388.13c-13.07,0-23.67-10.6-23.67-23.68v-25.88h435.48Z"
+          fill="#F2F2F2"
+        />
+        <circle cx="700.33" cy="811.12" r="10.02" fill="#333" />
+        <path
+          d="M918.07,556.22v231.79h-435.48v-231.79c0-11.16,9.05-20.22,20.22-20.22h395.05c11.16,0,20.21,9.06,20.21,20.22Z"
+          fill="#333"
+        />
+        <path
+          d="M800.24,876.58h-204.13c-2.49,0-4.3-2.38-3.63-4.78l3.18-11.44c.45-1.63,1.94-2.76,3.63-2.76h197.77c1.69,0,3.18,1.13,3.63,2.76l3.18,11.44c.67,2.4-1.14,4.78-3.63,4.78Z"
+          fill="#CCC"
+        />
+        <path
+          d="M864.56,871.76c-.1,5.6-8.56,4.84-19.07,4.84s-18.96,0-18.96-4.84c0-6.54,8.46-11.85,18.96-11.85s19.19,5.3,19.07,11.85Z"
+          fill="#E6E6E6"
+        />
+        <ellipse cx="845.93" cy="861.03" rx="1.3" ry="1.73" fill="#999" />
+        <path
+          d="M804.64,876.58h-212.92c-2.61,0-4.49-2.37-3.79-4.78l1.07-3.69c.36-1.23,1.48-2.08,2.77-2.08h212.84c1.28,0,2.41.85,2.77,2.08l1.07,3.69c.69,2.4-1.19,4.78-3.79,4.78Z"
+          fill="#E6E6E6"
+        />
+        <circle cx="474.64" cy="841.03" r="19.76" fill="#F5DD86" />
+        <path
+          d="M454.88,855.85s3.7,5.56,11.11-1.23c7.41-6.79,24.7-3.09,24.7-3.09,0,0,11.11.62,10.5,9.26-.62,8.64-8.03,17.91-25.32,17.91s-29.64-4.94-20.99-22.85Z"
+          fill="#F5DD86"
+        />
+        <path
+          d="M480.81,837.32c.38-5.26,6.79-3.09,9.26-3.7s6.17-4.94,8.03-1.85-1.23,9.88-6.17,11.73c-4.94,1.85-11.73,2.47-11.11-6.17Z"
+          fill="#EBB75B"
+        />
+        <path
+          d="M472.17,860.94s-.01,0-.02,0c-2.45-.16-5.45-1.61-8.84-3.35-.15-.08-.21-.26-.13-.42.08-.15.26-.21.42-.13,3.33,1.71,6.27,3.13,8.6,3.28.17.01.3.16.29.33-.01.16-.15.29-.31.29Z"
+          fill="#EBB75B"
+        />
+        <path
+          d="M484.68,859c-.11,0-.22-.06-.28-.17-.08-.15-.02-.34.14-.41,2.08-1.05,4.23-3.52,6.63-6.39.11-.13.3-.15.43-.04.13.11.15.3.04.43-2.44,2.93-4.63,5.44-6.82,6.55-.04.02-.09.03-.14.03Z"
+          fill="#EBB75B"
+        />
+        <circle cx="471.86" cy="837.63" r="4.01" />
+        <circle cx="472.48" cy="836.4" r="2.16" fill="#FFF" />
+      </svg>
+      <svg className={s.layer} viewBox="0 0 1500 1000">
+        <rect
+          id="light_bulb"
+          x="433.94"
+          y="5.08"
+          width="631.2"
+          height="31.47"
+          rx="5.29"
+          ry="5.29"
+          fill="#F5EAC4"
+        />
+        <rect
+          id="light_base"
+          x="429.31"
+          y="0"
+          width="640.45"
+          height="15.63"
+          rx="4.22"
+          ry="4.22"
+          fill="#F2F2F2"
+        />
+      </svg>
+      <svg
+        className={theme === "light" ? s.lightHide : s.lightShow}
+        viewBox="0 0 1500 1000"
+      >
+        <defs>
+          <linearGradient
+            id="linear-gradient"
+            x1="750"
+            y1="1000"
+            x2="750"
+            y2="20.36"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#fff" stopOpacity="0" />
+            <stop offset="1" stopColor="#fff" stopOpacity=".1" />
+          </linearGradient>
+        </defs>
+        <polygon
+          id="light_beam"
+          points="1500 1000 0 1000 442.73 20.36 1057.27 20.36 1500 1000"
+          fill="url(#linear-gradient)"
+        />
+      </svg>
     </>
   );
 }
