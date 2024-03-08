@@ -119,8 +119,18 @@
   font-size: calc(26px + 1vw);
 }
 
+.showcaseImgWrapper {
+  position: relative;
+}
+
+.showcaseImgPlaceholder,
 .showcaseImg {
+  aspect-ratio: 1.6;
   width: 100%;
+}
+
+.showcaseImgPlaceholder {
+  position: absolute;
 }
 
 .showcaseDescription {

@@ -1,5 +1,6 @@
 /// Imports ///
 // external
+import { Blurhash } from "react-blurhash";
 import { useEffect, useRef, useState } from "react";
 // components
 import Avatar from "../../Avatar";
@@ -29,17 +30,20 @@ import s from "./index.module.css";
 /// Constants ///
 const INFINITE_CONTENT = {
   ...INFINITE,
-  imgSrc: "/images/infinite-square.webp",
+  blurHash: "L055ti.TD4WA8^s7a$%h00tR8wH;",
+  imgSrc: "/images/infinite-square/",
 };
 
 const JOURN_CONTENT_LIGHT = {
   ...JOURN,
-  imgSrc: "/images/journ-square-light.webp",
+  blurHash: "LGRC-=-=xtS5_4-=M_IU.88_xutR",
+  imgSrc: "/images/journ-square-light/",
 };
 
 const JOURN_CONTENT_DARK = {
   ...JOURN,
-  imgSrc: "/images/journ-square-dark.webp",
+  blurHash: "L8Ci:YD*4m.9009G?at6EM~VNHIV",
+  imgSrc: "/images/journ-square-dark/",
 };
 
 /// Private Components ///
@@ -75,13 +79,35 @@ function Logo({ theme }) {
 }
 
 function ShowcaseCard({ content, t }) {
+  // initialize states and refs //
+  const [imgLoading, setImgLoading] = useState(true);
+  const imgRef = useRef(null);
+
+  // reset image loading state when content changes //
+  useEffect(() => {
+    setImgLoading(!imgRef.current?.complete);
+  }, [content]);
+
+  // render //
   return (
     <li className={`${s.showcaseContainer} ${t.showcaseContainer}`}>
-      <img
-        alt={content.imgAlt}
-        className={s.showcaseImg}
-        src={content.imgSrc}
-      />
+      <div className={s.showcaseImgWrapper}>
+        {imgLoading ? (
+          <div className={s.showcaseImgPlaceholder}>
+            <Blurhash hash={content.blurHash} height="100%" width="100%" />
+          </div>
+        ) : null}
+        <img
+          alt={content.imgAlt}
+          className={s.showcaseImg}
+          onLoad={() => {
+            setImgLoading(false);
+          }}
+          ref={imgRef}
+          sizes="35vw"
+          srcSet={`${content.imgSrc}500.webp 500w, ${content.imgSrc}1000.webp 1000w, ${content.imgSrc}1500.webp 1500w, ${content.imgSrc}2000.webp 2000w`}
+        />
+      </div>
       <div className={s.showcaseRightSection}>
         <p className={s.showcaseLabel}>showcase</p>
         <h1 className={s.showcaseTitle}>{content.title}</h1>

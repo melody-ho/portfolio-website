@@ -114,8 +114,18 @@
   padding: 1.5em 2em 1.5em 0;
 }
 
+.showcaseImgWrapper {
+  position: relative;
+}
+
+.showcaseImgPlaceholder,
 .showcaseImg {
+  aspect-ratio: 1;
   width: 100%;
+}
+
+.showcaseImgPlaceholder {
+  position: absolute;
 }
 
 .showcaseRightSection {

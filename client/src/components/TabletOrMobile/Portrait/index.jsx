@@ -1,5 +1,6 @@
 /// Imports ///
 // external
+import { Blurhash } from "react-blurhash";
 import { useEffect, useRef, useState } from "react";
 // components
 import Avatar from "../../Avatar";
@@ -29,17 +30,20 @@ import s from "./index.module.css";
 /// Constants ///
 const INFINITE_CONTENT = {
   ...INFINITE,
-  imgSrc: "/images/infinite-landscape.webp",
+  blurHash: "L05Osn.T00I8M{xVV@.9MHx^8w8w",
+  imgSrc: "/images/infinite-landscape/",
 };
 
 const JOURN_CONTENT_LIGHT = {
   ...JOURN,
-  imgSrc: "/images/journ-landscape-light.webp",
+  blurHash: "LVQT4L%Mxt-;~qR*RjV@tSM{WARP",
+  imgSrc: "/images/journ-landscape-light/",
 };
 
 const JOURN_CONTENT_DARK = {
   ...JOURN,
-  imgSrc: "/images/journ-landscape-dark.webp",
+  blurHash: "L6DcRCRqQ,0000ELx^xa5a~C%1-:",
+  imgSrc: "/images/journ-landscape-dark/",
 };
 
 /// Private Components ///
@@ -75,15 +79,37 @@ function Logo({ theme }) {
 }
 
 function ShowcaseCard({ content, t }) {
+  // initialize states and refs //
+  const [imgLoading, setImgLoading] = useState(true);
+  const imgRef = useRef(null);
+
+  // reset image loading state when content changes //
+  useEffect(() => {
+    setImgLoading(!imgRef.current?.complete);
+  }, [content]);
+
+  // render //
   return (
     <li className={`${s.showcaseContainer} ${t.showcaseContainer}`}>
       <p className={s.showcaseLabel}>showcase</p>
       <h1 className={s.showcaseTitle}>{content.title}</h1>
-      <img
-        alt={content.imgAlt}
-        className={s.showcaseImg}
-        src={content.imgSrc}
-      />
+      <div className={s.showcaseImgWrapper}>
+        {imgLoading ? (
+          <div className={s.showcaseImgPlaceholder}>
+            <Blurhash hash={content.blurHash} height="100%" width="100%" />
+          </div>
+        ) : null}
+        <img
+          alt={content.imgAlt}
+          className={s.showcaseImg}
+          onLoad={() => {
+            setImgLoading(false);
+          }}
+          ref={imgRef}
+          sizes="90vw"
+          srcSet={`${content.imgSrc}800.webp 800w, ${content.imgSrc}1600.webp 1600w, ${content.imgSrc}2400.webp 2400w, ${content.imgSrc}3200.webp 3200w`}
+        />
+      </div>
       <p className={s.showcaseDescription}>{content.description}</p>
       <div className={s.showcaseSkills}>
         {content.skills.map((skill) => (

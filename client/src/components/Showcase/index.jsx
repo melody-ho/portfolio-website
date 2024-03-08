@@ -1,6 +1,7 @@
 /// Imports ///
 // external
-import { useContext, useEffect, useState } from "react";
+import { Blurhash } from "react-blurhash";
+import { useContext, useEffect, useRef, useState } from "react";
 // contexts
 import ThemeContext from "../../ThemeContext";
 // variables
@@ -13,34 +14,59 @@ import s from "./index.module.css";
 /// Constants ///
 const INFINITE_CONTENT = {
   ...INFINITE,
+  blurHash: "L055ti.TD4WA8^s7a$%h00tR8wH;",
   id: "infinite",
-  imgSrc: "/images/infinite-square.webp",
+  imgSrc: "/images/infinite-square/",
 };
 
 const JOURN_CONTENT_LIGHT = {
   ...JOURN,
+  blurHash: "LGRC-=-=xtS5_4-=M_IU.88_xutR",
   id: "journ",
-  imgSrc: "/images/journ-square-light.webp",
+  imgSrc: "/images/journ-square-light/",
 };
 
 const JOURN_CONTENT_DARK = {
   ...JOURN,
+  blurHash: "L8Ci:YD*4m.9009G?at6EM~VNHIV",
   id: "journ",
-  imgSrc: "/images/journ-square-dark.webp",
+  imgSrc: "/images/journ-square-dark/",
 };
 
 /// Private Components ///
 function ShowcaseCard({ content, t }) {
+  // initialize states and refs //
+  const [imgLoading, setImgLoading] = useState(true);
+  const imgRef = useRef(null);
+
+  // reset image loading state when content changes //
+  useEffect(() => {
+    setImgLoading(!imgRef.current?.complete);
+  }, [content]);
+
+  // render //
   return (
     <li
       className={`${s.showcaseContainer} ${t.showcaseContainer}`}
       id={content.id}
     >
-      <img
-        alt={content.imgAlt}
-        className={s.showcaseImg}
-        src={content.imgSrc}
-      />
+      <div className={s.showcaseImgWrapper}>
+        {imgLoading ? (
+          <div className={s.showcaseImgPlaceholder}>
+            <Blurhash hash={content.blurHash} height="100%" width="100%" />
+          </div>
+        ) : null}
+        <img
+          alt={content.imgAlt}
+          className={s.showcaseImg}
+          onLoad={() => {
+            setImgLoading(false);
+          }}
+          ref={imgRef}
+          sizes="35vw"
+          srcSet={`${content.imgSrc}500.webp 500w, ${content.imgSrc}1000.webp 1000w, ${content.imgSrc}1500.webp 1500w, ${content.imgSrc}2000.webp 2000w`}
+        />
+      </div>
       <div className={s.showcaseRightSection}>
         <p className={s.showcaseLabel}>showcase</p>
         <h1 className={s.showcaseTitle}>{content.title}</h1>

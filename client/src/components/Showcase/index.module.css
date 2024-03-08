@@ -27,8 +27,18 @@
   transform: translateZ(1px);
 }
 
+.showcaseImgWrapper {
+  position: relative;
+}
+
+.showcaseImgPlaceholder,
 .showcaseImg {
+  aspect-ratio: 1;
   width: 100%;
+}
+
+.showcaseImgPlaceholder {
+  position: absolute;
 }
 
 .showcaseRightSection {
