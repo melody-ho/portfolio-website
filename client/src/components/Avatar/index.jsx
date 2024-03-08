@@ -20,7 +20,7 @@ function Avatar({ handleReady }) {
     if (avatarRef.current) {
       avatarRef.current.addEventListener("ready", handleReady);
     }
-  }, [avatarRef, handleReady]);
+  }, [handleReady]);
 
   // configure animation interactivity after first wave has played //
   useEffect(() => {
@@ -71,7 +71,7 @@ function Avatar({ handleReady }) {
         }
       });
     }
-  }, [avatarRef]);
+  }, []);
 
   // render //
   return (

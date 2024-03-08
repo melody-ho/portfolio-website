@@ -58,7 +58,7 @@ function ThemeToggle({ setTheme, theme }) {
         themeToggleInteraction.current = true;
       }
     });
-  }, [theme, themeToggleInteraction]);
+  }, [theme]);
 
   // configure theme toggling //
   useEffect(() => {

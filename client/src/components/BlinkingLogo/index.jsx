@@ -52,7 +52,7 @@ function BlinkingLogo({ device, theme }) {
         blinkingLogoInteraction.current = true;
       }
     });
-  }, [blinkingLogoInteraction, theme]);
+  }, [theme]);
 
   // render //
   return (
