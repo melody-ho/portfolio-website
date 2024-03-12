@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import s from "./index.module.css";
 
 /// Constants ///
-const ANIMATION_FRAMES = [12, 210];
+const ANIMATION_FRAMES = [36, 106];
 const STOP_FRAME = [0];
 
 /// Private Components ///
