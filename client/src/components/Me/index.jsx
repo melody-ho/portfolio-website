@@ -86,7 +86,7 @@ function Me() {
         </div>
       </section>
       <section>
-        <a className={s.resumeBtn} href="/melody-ho.pdf">
+        <a className={s.resumeBtn} href="/MelodyHo_SoftwareEngineer.pdf">
           download
           <br />
           resume

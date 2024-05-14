@@ -297,7 +297,7 @@ function Portrait({ fragmentId, handleLoaded, setTheme, theme }) {
           <section>
             <a
               className={`${s.meResumeBtn} ${t.meResumeBtn}`}
-              href="/melody-ho.pdf"
+              href="/MelodyHo_SoftwareEngineer.pdf"
             >
               resume.pdf
             </a>

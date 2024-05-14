@@ -273,7 +273,7 @@ function Landscape({ fragmentId, handleLoaded, setTheme, theme }) {
               <section className={s.meResumeBtnContainer}>
                 <a
                   className={`${s.meResumeBtn} ${t.meResumeBtn}`}
-                  href="/melody-ho.pdf"
+                  href="/MelodyHo_SoftwareEngineer.pdf"
                 >
                   resume.pdf
                 </a>
